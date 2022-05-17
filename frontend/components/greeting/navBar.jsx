@@ -9,9 +9,9 @@ const NavBar = ({ currentUser, logout }) => {
                 <a href='#'>Rent</a>
                 <a href='#'>Sell</a>
             </div>
-            <div className='nav-mid'>
+            <Link to='/' className='nav-mid'>
                 <img src={window.logo}></img>
-            </div>
+            </Link>
             <div className='nav-right'>
             <Link id='login' to="/login" >Login</Link>
             <Link id='signup' to="/signup">Sign up</Link>

@@ -53,29 +53,33 @@ class SessionForm extends React.Component {
             <div className='form-div'>
                 <div className='login-form-container'>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
-                        Welcome to Chillow!
-                        <br/>
-                        <p className='errors'>
+                        <h3 id='page-greeting' >Welcome to Chillow</h3>
+                        {this.props.formType === 'login' ? 
+                        <h1 id='form-title'>Log In</h1> : <h1 id='form-title'>Sign Up</h1>}
+                        <ul className='errors'>
                             {this.renderErrors()}
-                        </p>
+                        </ul>
                         <div className='login-form'>
                             <br/>
-                                <input type="text" 
+                                <input id='login-inputs'
+                                    type="text" 
                                     value={this.state.email}
                                     onChange={this.update('email')}
                                     className="login-input" 
                                     placeholder='Email'/>
                             <br/>
-                                <input type="password"
+                                <input id='login-inputs'
+                                    type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                     className="login-input"
                                     placeholder='Password' />
                             <br/>
-                            <input className='session-submit' type="submit" value={this.props.formType} />
+                            <input id='submit' className='session-submit' type="submit" 
+                            value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
                         </div>
                     </form>
-                        <button className='session-submit' onClick={this.demoLogin}>Demo Login</button>
+                        <button id='demo' className='session-submit' onClick={this.demoLogin}>Demo Login</button>
                     <br/>
                 </div>
                 <div className='img-holder'>
