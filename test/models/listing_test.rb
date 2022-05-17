@@ -13,7 +13,7 @@
 #  beds       :integer          not null
 #  baths      :integer          not null
 #  price      :integer          not null
-#  owner_id   :integer
+#  owner_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

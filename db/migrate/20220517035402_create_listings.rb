@@ -15,6 +15,12 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :listings, :street, unique: true
-    add_index :listings, [:latitude, :longitude], unique: true
+    add_index :listings, :city
+    add_index :listings, :zip_code
+    add_index :listings, :state
+    add_index :listings, :sqft
+    add_index :listings, :beds
+    add_index :listings, :baths
+    add_index :listings, :price
   end
 end

@@ -8,7 +8,12 @@
 
 # require 'open-uri'
 
+
 User.destroy_all
+Listing.destroy_all 
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('listings')
+
 demo = User.create(email: 'demologin@aa.io', password: 'password')
 user_1 = User.create(email:'user1@aa.io', password:'111111')
 user_2 = User.create(email:'user2@aa.io', password:'222222')
@@ -26,7 +31,7 @@ user_13 = User.create(email:'user13@aa.io', password:'130000')
 user_14 = User.create(email:'user14@aa.io', password:'140000')
 
 
-Listing.destroy_all 
+
 list_1 = Listing.create(street:'8140 Manjares', city:'Monterey', zip_code:'93940', state:'CA', latitude:'36.57323', longitude:'-121.82277', sqft:'4737', beds:'5', baths:'6', price:'5500000', owner_id:'demo.id')
 # list_1.photos.attch(io: open("url goes here, given by aws, don't have yet"), filename:'list1_1.png')
 # list_1.photos.attch(io: open("url goes here, given by aws, don't have yet"), filename:'list1_2.png')
