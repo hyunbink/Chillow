@@ -12,6 +12,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import GreetingContainer from './greeting/navBar_container';
 import Splash from './splash/splash'
+import ListingShowContainer from './listings/listing_show_container';
 
 const App = () => (
     <div>
@@ -22,6 +23,8 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <Route exact path="/listings/:listingId" component={ListingShowContainer} />
+            <Route exact path="/listings" component={ListingShowContainer} />
             <AuthRoute exact path="/" component={Splash} />
         </Switch>
     </div>

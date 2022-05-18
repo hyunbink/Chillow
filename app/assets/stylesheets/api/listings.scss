@@ -1,3 +1,99 @@
 // Place all the styles related to the api/listings controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (
+    
+
+.listing-div{
+    display: flex;
+    height: 100vh;
+}
+
+.listing-price{
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.listing-physical-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.listing-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.listing-address {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.listing-physical-div{
+    margin-bottom: 8px;
+}
+
+.listing-address-div{
+    margin-bottom: 8px;
+}
+
+.listing-price-div{
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.listing-photos{
+    width: 50%;
+    height: 25%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+}
+
+#listing-photo-0{
+    width: 100%;
+    height: 50%;
+}
+
+.listing-div-left{
+    width: 50%
+}
+
+.listing-div-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: ;
+}
+
+.listing-nav-header{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    // margin-top: 2px;
+    border-bottom: .5px solid grey;
+}
+
+#listing-logo{
+    // height: 10%;
+}
+
+#heart{
+    color: rgba(85,179,243,255);
+    align-self: center;
+}
+
+.listings-mini-map{
+
+}
+
+#mini-map{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 10px;
+    padding: 10px;
+}
