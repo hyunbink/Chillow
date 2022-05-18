@@ -5,4 +5,10 @@ import ListingForm from './listing_form';
 
 const mSTP = (state, ownProps) => ({
     
-})
+});
+
+
+const mDTP = dispatch => ({
+
+});
+
