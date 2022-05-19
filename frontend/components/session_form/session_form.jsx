@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
             <div className='form-div'>
                 <div className='login-form-container'>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
-                        <h3 id='page-greeting' >Welcome to Chillow</h3>
+                        <h3 id='page-nav-bar' >Welcome to Chillow</h3>
                         {this.props.formType === 'login' ? 
                         <h1 id='form-title'>Log In</h1> : <h1 id='form-title'>Sign Up</h1>}
                         <ul className='errors'>

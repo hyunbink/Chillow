@@ -4,18 +4,20 @@
     <title>Chillow</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:maps_api_key]}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body id=''>
   <script>
     window.heroBanner="<%=image_url('heroBanner.jpg')%>"
     window.homeBanner="<%=image_url('homeBanner.jpg')%>"
     window.demoMiniMap="<%=image_url('demo-mini-map.png')%>"
     window.logo="<%=image_url('logo.png')%>"
     window.userSymbol="<%=image_url('userSymbol.png')%>"
+    window.redPin="<%=image_url('redPin.png')%>"
+    window.bluePin="<%=image_url('bluePin.png')%>"
   </script>
     <%= yield %>
   </body>
