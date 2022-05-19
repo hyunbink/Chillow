@@ -83,7 +83,7 @@ class SessionForm extends React.Component {
                     <br/>
                 </div>
                 <div className='img-holder'>
-                    <img src={window.heroBanner}></img>
+                    <img src={window.heroBanner} alt='hero-banner'></img>
                 </div>
             </div>
         );

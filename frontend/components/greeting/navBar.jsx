@@ -5,12 +5,12 @@ const NavBar = ({ currentUser, logout }) => {
     const sessionLinks = () => (
         <nav className='top-nav'>
             <div className='nav-left'>
-                <a href='#'>Buy</a>
-                <a href='#'>Rent</a>
-                <a href='#'>Sell</a>
+                <Link className='nav-left-link' to='/listings'>Buy</Link>
+                {/* <Link className='nav-left-link' href='#'>Rent</Link> */}
+                <Link to='#' className='nav-left-link'>Sell</Link>
             </div>
             <Link to='/' className='nav-mid'>
-                <img src={window.logo}></img>
+                <img src={window.logo} alt="chillow-logo"></img>
             </Link>
             <div className='nav-right'>
             <Link id='login' to="/login" >Login</Link>
@@ -20,10 +20,20 @@ const NavBar = ({ currentUser, logout }) => {
     );
 
     const personalNavBar = () => (
-        <hgroup className='header-group'>
-            <h2 className='header-name'>Hi, {currentUser.email}!</h2>
-            <button className='header-button' onClick={logout}>Log Out</button>
-        </hgroup>
+        <nav className='top-nav'>
+            <div className='nav-left'>
+                <Link className='nav-left-link' to='/listings'>Buy</Link>
+                {/* <Link className='nav-left-link' href='#'>Rent</Link> */}
+                <Link to='#' className='nav-left-link'>Sell</Link>
+            </div>
+            <Link to='/' className='nav-mid'>
+                <img src={window.logo} alt="chillow-logo"></img>
+            </Link>
+            <div className='nav-right'>
+            <Link id='logout' onClick={logout} to="/">Logout</Link>
+            <span id='logged-in-user'><img id='user-symbol' src={window.userSymbol} alt='user-symbol'/>{currentUser.email}</span>
+            </div>
+        </nav>
     );
 
     return currentUser ? personalNavBar() : sessionLinks();

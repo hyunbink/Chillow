@@ -18,17 +18,17 @@ class ListingShow extends React.Component{
             <div className="listing-div">
                 <div className="listing-div-left">
                     {photoUrls.map((photoUrl, i) =>(
-                        <img key={i} id={`listing-photo-${i}`} className="listing-photos" src={photoUrl}></img>
+                        <img key={i} id={`listing-photo-${i}`} className="listing-photos" src={photoUrl} alt="listing-photo"></img>
                         ))}
                 </div>
                 <div className="listing-div-right">
                     <nav className="listing-nav-header">
-                        <img id='listing-logo' src={window.logo}></img>
+                        <img id='listing-logo' src={window.logo} alt="Chillow-logo"></img>
                         <a id='heart'>♡♥</a>
                     </nav>
                     <div className="listing-physical-div">
                         <div className="listing-price-div">
-                        <span className="listing-price">${price.toLocaleString(undefined, { minimumFractionDigits: 0 })}</span>
+                            <span className="listing-price">${price.toLocaleString(undefined, { minimumFractionDigits: 0 })}</span>
                         </div>
                         <span className="listing-physical-info">{beds} </span>
                         <span className="listing-info">bd | </span>
@@ -44,7 +44,7 @@ class ListingShow extends React.Component{
                         <span className="listing-address">{zip_code}</span>
                     </div>
                     <div className="listings-mini-map">
-                        <img id="mini-map" src={window.demoMiniMap}></img>
+                        <img id="mini-map" src={window.demoMiniMap} alt="mini-map"></img>
                     </div>
                 </div>
             </div>

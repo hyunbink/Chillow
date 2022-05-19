@@ -51,7 +51,7 @@
     width: 33%;
 }
 
-.nav-left a {
+.nav-left-link {
     padding-left: 14px;
     padding-right: 14px;
     font-family: Arial, Helvetica, sans-serif;
@@ -88,16 +88,33 @@
 }
 
 a#login:hover{
-    color: blue;
+    color: rgba(85,179,243,255);
 }
 
-a#signup:hover{
-    color: blue;
+#signup:hover{
+    color: rgba(85,179,243,255);
 }
 
-.nav-left a:hover{
-    color: blue;
+#logout:hover{
+    color: rgba(85,179,243,255);
 }
+
+.nav-left-link:hover{
+    color: rgba(85,179,243,255);
+}
+
+#user-symbol{
+    height: 16px;
+    color: rgba(85,179,243,255);
+}
+
+#logged-in-user:hover{
+    color: rgba(85,179,243,255);
+    cursor: pointer;
+}
+
+
+
 
 
 
