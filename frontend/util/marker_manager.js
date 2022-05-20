@@ -1,7 +1,7 @@
 class MarkerManager {
-    constructor(map, history){
+    constructor(map, handleClick){
         this.map = map;
-        this.history = history;
+        this.handleClick = handleClick;
         this.markers = {};
     }
 
@@ -10,58 +10,62 @@ class MarkerManager {
         listings.forEach(listing => listingsObj[listing.id] = listing);
 
         listings
-            .filter(listing => !this.markers[listing.id])
+            // .filter(listing => !this.markers[listing.id])
             .forEach(newListing => this.createMarkerFromListing(newListing));
 
-        Object.keys(this.markers)
-            .filter(listingId => !listingsObj[listingId])
-            .forEach((listingId) => this.removeMarker(this.markers[listingId]));
+        // Object.keys(this.markers)
+        //     .filter(listingId => !listingsObj[listingId])
+        //     .forEach((listingId) => this.removeMarker(this.markers[listingId]));
+
     }
 
     createMarkerFromListing(listing) {
-        const position = new google.maps.LatLng(listing.lat, listing.lng);
+        const position = new google.maps.LatLng(listing.latitude, listing.longitude);
 
+        // for display hover window over marker
         const contentListingInfo = `<div style="display: flex; justify-content: space-between;">
         <div>
             <img src="${listing.photoUrls[0]}" style= 'width: 70px; height:70px; padding-right:15px;'></img>
         </div>
-        <div className = "infoWindow-right">
-            <h3> $ ${listing.price}</h3>
-            <h2> ${listing.beds} bd ${listing.baths} ba  ${listing.sqft} sqft</h2>
+        <div className = "info-Window" >
+            <h3 style='font-size: 14px; font-family: Roboto, Arial; font-weight: 500; color:#333' > $${listing.price.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h3>
+            <h2 style='font-family: Roboto, Arial; font-size: 13px; color:#333;' > ${listing.beds} bd ${listing.baths} ba  ${listing.sqft} sqft</h2>
         </div>
         </div>`;
-
         const listingInfoWindow = new google.maps.InfoWindow({
             content: contentListingInfo,
             disableAutoPan: true
         });
 
         const onClick = () => {
-            this.history.push(`listings/${listing.id}`)
+            // this.history.push(`listings/${listing.id}`)
+            // render show modal
+            console.log("CLICK")
         };
 
         const mouseOver = () => {
             marker.infoWindow.open(this.map, marker);
-            marker.setIcon(window.bluePin);
+            marker.setIcon("https://maps.google.com/mapfiles/ms/icons/blue-dot.png");
         };
 
         const mouseOut = () => {
             marker.infoWindow.close(this.map, marker);
-            marker.setIcon(window.redPin);
+            marker.setIcon("https://maps.google.com/mapfiles/ms/icons/red-dot.png");
         };
 
+        
         const marker = new google.maps.Marker({
         position,
         map: this.map,
         infoWindow: listingInfoWindow,
         listingId: listing.id,
-        icon: window.redPin
+        icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
         });
 
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
         marker.addListener("click", onClick);
-        this.markers[marker.listingId] = marker;
+        // this.markers[marker.listingId] = marker;
     };
 
     removeMarker(marker) {

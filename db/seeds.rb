@@ -108,7 +108,7 @@ list_12.photos.attach(io: open("https://chillow-listings-seeds.s3.us-west-1.amaz
 list_12.photos.attach(io: open("https://chillow-listings-seeds.s3.us-west-1.amazonaws.com/chillow_listings/listing_12/list12_4.png"), filename:'list12_4.png')
 list_12.photos.attach(io: open("https://chillow-listings-seeds.s3.us-west-1.amazonaws.com/chillow_listings/listing_12/list12_5.png"), filename:'list12_4.png')
 
-list_13 = Listing.create(street:'2205 Inverness Dr', city:'South Lake Tahoe', zip_code:'96150', state:'CA', latitude:'38.93290', longitude:'120.00639', sqft:'3241', beds:'5', baths:'5', price:'3888000', owner_id:'user_13.id')
+list_13 = Listing.create(street:'2205 Inverness Dr', city:'South Lake Tahoe', zip_code:'96150', state:'CA', latitude:'38.93290', longitude:'-120.00639', sqft:'3241', beds:'5', baths:'5', price:'3888000', owner_id:'user_13.id')
 list_13.photos.attach(io: open("https://chillow-listings-seeds.s3.us-west-1.amazonaws.com/chillow_listings/listing_13/list13_1.png"), filename:'list13_1.png')
 list_13.photos.attach(io: open("https://chillow-listings-seeds.s3.us-west-1.amazonaws.com/chillow_listings/listing_13/list13_2.png"), filename:'list13_2.png')
 list_13.photos.attach(io: open("https://chillow-listings-seeds.s3.us-west-1.amazonaws.com/chillow_listings/listing_13/list13_3.png"), filename:'list13_3.png')

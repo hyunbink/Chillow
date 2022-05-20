@@ -6,7 +6,7 @@ import { withRouter, Link } from 'react-router-dom';
 import Search from './search';
 
 const mSTP = (state, ownProps) => {
-    console.log("state", state)
+    // console.log("state", state)
     return({
         listings: state.entities.listings
     })
