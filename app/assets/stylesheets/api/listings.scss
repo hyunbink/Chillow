@@ -6,6 +6,7 @@
 .listing-div{
     display: flex;
     height: 100vh;
+    background-color: white;
 }
 
 .listing-price{
@@ -58,7 +59,7 @@
 }
 
 .listing-div-left{
-    width: 50%;
+    width: 75%;
     overflow-y: scroll;
 }
 
@@ -70,7 +71,7 @@
 }
 
 .listing-nav-header{
-    height: 10%;
+    height: 8%;
     display: flex;
     justify-content: space-between;
     // margin-top: 2px;
@@ -82,6 +83,8 @@
 #heart{
     color: rgba(85,179,243,255);
     align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 24px;
 }
 
 .listings-mini-map{
@@ -155,3 +158,58 @@
     border: 5px solid blue;
 }
 
+.last-photo-blur-odd{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+    filter: blur(8px);
+}
+
+.last-photo-blur-even{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+    filter: blur(8px);
+}
+
+.blur-container-even{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    display: inline-flex;
+}
+
+.blur-container-odd{
+    width: 100%;
+    height: 25%;
+    position: relative;
+    display: inline-flex;
+}
+
+.blur-img-text{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+// .tour-button{
+//     background-color: rgba(85,179,243,255);
+//     position: absolute;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//     color: white;
+// }

@@ -11,14 +11,15 @@ const getCoordsObj = latLng=> ({
 
 
 // do something to get form type and change default mapOptions ?
+
 const mapOptions = {
             center: { lat: 37.7758, lng: -122.435 },     // coords for sf
             zoom: 13
         };
-
 class ListingMap extends React.Component{
     constructor(props){
         super(props);
+
     }
 
     // getLatLng(address) {
@@ -73,7 +74,7 @@ class ListingMap extends React.Component{
         // }
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);    // this renders map
-        this.MarkerManager = new MarkerManager(this.map);
+        this.MarkerManager = new MarkerManager(this.map, this.props.openModal);
         this.MarkerManager.updateMarkers(Object.values(this.props.listings))
 
     }

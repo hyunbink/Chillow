@@ -4,9 +4,11 @@ import ListingShow from './listing_show';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
-    console.log(state)
+    // console.log("conatiner stateteetet", state)
     return({
-        listing: state.entities.listings[ownProps.match.params.listingId]
+        // listingId: ownProps.listingId
+        listingId: state.ui.listingId,
+        listing: state.entities.listings[state.ui.listingId]
     })
 };
 

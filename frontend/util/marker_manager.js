@@ -37,10 +37,10 @@ class MarkerManager {
             disableAutoPan: true
         });
 
-        const onClick = () => {
-            // this.history.push(`listings/${listing.id}`)
-            // render show modal
-            console.log("CLICK")
+        const onClick = (listing) => {
+            // eventually change the location to instead render modal
+            // location.href = `#/listings/${marker.listingId}`
+            this.props.openModal('show',  listing.id)    // get this to render modal
         };
 
         const mouseOver = () => {
@@ -64,7 +64,7 @@ class MarkerManager {
 
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
-        marker.addListener("click", onClick);
+        marker.addListener("click", ()=>(this.handleClick('show',listing.id)));
         // this.markers[marker.listingId] = marker;
     };
 

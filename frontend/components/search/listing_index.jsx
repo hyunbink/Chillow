@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class ListingIndex extends React.Component{
     constructor(props){
@@ -17,12 +18,12 @@ class ListingIndex extends React.Component{
             <div className="index-div-right">
                 <div className="index-all-listings">
                     {listingsArr.map((listing,j)=>(
-                        <Link style={{textDecoration: 'none', 
-                        fontFamily: 'Arial, Helvetica, sans-serif',
-                        color:'rgb(39, 39, 39)'}} 
-                        to={`/listings/${listing.id}`} 
-                        key={j} >
-                            <div className="index-listing">
+                        // <Link style={{textDecoration: 'none', 
+                        // fontFamily: 'Arial, Helvetica, sans-serif',
+                        // color:'rgb(39, 39, 39)'}} 
+                        // to={`/listings/${listing.id}`} 
+                        // key={j} >
+                            <div className="index-listing" onClick={()=>this.props.openModal('show',  listing.id)} >
                                 <div className="index-listing-photo-div">
                                     <img className="index-listing-photos" 
                                     src={listing.photoUrls[0]} 
@@ -51,12 +52,13 @@ class ListingIndex extends React.Component{
                                     </div>
                                 </div>
                             </div>
-                        </Link>
+                        // </Link>
                     ))}
                 </div>
             </div>
         )
     }
 }
+
 
 export default ListingIndex
