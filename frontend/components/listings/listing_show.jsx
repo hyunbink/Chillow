@@ -1,25 +1,31 @@
 import React from "react";
 // import ListingMap from "../listings_map/listings_map";
+import MarkerManager from "../../util/marker_manager";
 
 class ListingShow extends React.Component{
     constructor(props){
         super(props);
         this.state = props[this.props.listingId];
         
-        this.mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 },     // coords for sf
-            zoom: 13
-        };
         
         // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
     }
     
     componentDidMount(){
-        this.props.fetchListing(this.props.listingId) 
-        console.log("state", this.state )
-        console.log("props", this.props )
+        // this.props.fetchListing(this.props.listingId) 
+        this.mapOptions = {
+            center: { lat: this.props.listing.latitude, lng: this.props.listing.longitude },     // coords for sf
+            zoom: 17
+        };
+        // console.log("state", this.state )
+        // console.log("props", this.props )
         // need to key into next state with listingId
         // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
+        console.log(this.props)
+        let icon = 'house'
+        this.map = new google.maps.Map(this.mapNode, this.mapOptions); 
+        this.MarkerManager = new MarkerManager(this.map, "", icon);
+        this.MarkerManager.updateMarkers([this.props.listing])
     }
     
     render(){
@@ -46,7 +52,7 @@ class ListingShow extends React.Component{
                         ))}
                         <div className={blurContainer}>
                             <img key={photoUrls.length} className={lastPhotoBlur} src={photoUrls[0]} alt="listing-photo"></img>
-                            <h6 className="blur-img-text">Click to Favorite</h6>
+                            <div className="blur-img-text" onClick={console.log('favorite')}>Click to Favorite</div>
                             {/* <button className="tour-button">Request a tour</button>   */}
                             {/* maybe have button show email and say 'email owner to request tour ??' */}
                         </div>
@@ -78,7 +84,6 @@ class ListingShow extends React.Component{
 
                     
                     <div className="listings-mini-map">
-                        <img id="mini-map" src={window.demoMiniMap} alt="mini-map"></img>
                         <div ref={ map => this.mapNode = map } id='map-container'>
                         </div>
                     </div>
