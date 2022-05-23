@@ -4,6 +4,7 @@ import ListingForm from './listing_form';
 import { createListing } from '../../actions/listing_actions';
 
 const mSTP = (state, ownProps) => {
+    console.log('in the container state', state)
     return({
         listing: {
             street: '' , 

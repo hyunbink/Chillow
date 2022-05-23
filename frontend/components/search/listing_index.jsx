@@ -16,14 +16,14 @@ class ListingIndex extends React.Component{
         let listingsArr = Object.values(this.props.listings)
         return(
             <div className="index-div-right">
-                <div className="index-all-listings">
+                <div key='listings' className="index-all-listings">
                     {listingsArr.map((listing,j)=>(
                         // <Link style={{textDecoration: 'none', 
                         // fontFamily: 'Arial, Helvetica, sans-serif',
                         // color:'rgb(39, 39, 39)'}} 
                         // to={`/listings/${listing.id}`} 
                         // key={j} >
-                            <div className="index-listing" onClick={()=>this.props.openModal('show',  listing.id)} >
+                            <div key={j} className="index-listing" onClick={()=>this.props.openModal('show',  listing.id)} >
                                 <div className="index-listing-photo-div">
                                     <img className="index-listing-photos" 
                                     src={listing.photoUrls[0]} 

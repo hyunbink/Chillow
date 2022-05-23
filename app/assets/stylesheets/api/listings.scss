@@ -214,3 +214,49 @@
 //     justify-content: center;
 //     color: white;
 // }
+
+
+// listings forms
+.form-div{
+    display: flex;
+    // height: calc(100vh -  100px);
+    width: calc();
+    height: calc(100vh - 80px);
+    background-color: white;
+    border: 3px solid red;
+}
+
+.form-div-left{
+    width: 100%;
+    // height: 100%;
+    border: 3px solid blue ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-div-right{
+    width: 100%;
+    // height: 100%;
+    overflow-y: scroll;
+    border: solid 3px green;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-photo-div{
+    border: solid 3px yellow;
+    width: 75%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-photo-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
