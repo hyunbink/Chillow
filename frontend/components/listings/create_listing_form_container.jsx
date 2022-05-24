@@ -5,6 +5,7 @@ import { createListing } from '../../actions/listing_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
+    
     return({
         listing: {
             street: '' , 

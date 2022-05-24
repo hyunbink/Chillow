@@ -102,6 +102,45 @@
     padding: 10px;
 }
 
+.show-edit-link-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.show-edit-link{
+    text-decoration: none;
+    // color: white;
+    // background-color: rgba(85,179,243,255);
+    // padding: 5px;
+    // align-self: center;
+    background-color: rgb(0, 106, 255);
+    border-color: rgb(0, 106, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 9px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    // margin-top: 5%;
+    margin-bottom: 5%;
+    height: 30px;
+    width: 80%;
+}
+
+.show-edit-link:hover{
+    cursor: pointer;
+    background-color: rgba(85,179,243,255);
+    border-color: rgba(85,179,243,255);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
 
 
 
@@ -273,3 +312,5 @@
 .form-photos-new-prev{
     text-align: center;
 }
+
+

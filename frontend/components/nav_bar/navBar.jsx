@@ -7,7 +7,8 @@ const NavBar = ({ currentUser, logout }) => {
             <div className='nav-left'>
                 <Link className='nav-left-link' to='/listings'>Buy</Link>
                 {/* <Link className='nav-left-link' href='#'>Rent</Link> */}
-                <Link to='#' className='nav-left-link'>Sell</Link>
+                <Link to='/listings/new' className='nav-left-link'>Sell</Link>
+                
             </div>
             <Link to='/' className='nav-mid'>
                 <img src={window.logo} alt="chillow-logo"></img>
@@ -24,7 +25,7 @@ const NavBar = ({ currentUser, logout }) => {
             <div className='nav-left'>
                 <Link className='nav-left-link' to='/listings'>Buy</Link>
                 {/* <Link className='nav-left-link' href='#'>Rent</Link> */}
-                <Link to='#' className='nav-left-link'>Sell</Link>
+                <Link to='/listings/new' className='nav-left-link'>Sell</Link>
             </div>
             <Link to='/' className='nav-mid'>
                 <img src={window.logo} alt="chillow-logo"></img>

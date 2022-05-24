@@ -22,7 +22,9 @@ class Api::ListingsController < ApplicationController
 
     def update 
         @listing = Listing.find_by(id: params[:id])
-        if @listing && @listing.update(listing_params) && @listing.owner_id == current_user.id
+        print listing_params
+        print "))))))OOOOOOOOOOOOOOOOO((((((((("
+        if @listing && @listing.owner_id == current_user.id && @listing.update(listing_params) 
             render :show
         else
             render json: @listing.errors.full_messages, status: 422
@@ -31,6 +33,6 @@ class Api::ListingsController < ApplicationController
 
     private
     def listing_params
-        params.require(:listing).permit(:street, :city, :zip_code, :state, :latitude, :longitude, :sqft, :beds, :baths, :price, :owner_id, photos: [])
+        params.require(:listing).permit(:street, :city, :zip_code, :state, :latitude, :longitude, :sqft, :beds, :baths, :price, :owner_id, photos: []  )
     end
 end

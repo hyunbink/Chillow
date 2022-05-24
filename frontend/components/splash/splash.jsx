@@ -15,9 +15,9 @@ const Splash = props => {
                     <br/>
             </div>
                 <div>
-                    <div><Link className='nav-left-link' to='/listings'>Buy</Link></div>
-                    <div>Sell a home</div>
-                    <div>Rent a home</div>
+                    <div><Link className='nav-left-link' to='/listings'>Buy a home</Link></div>
+                    <div><Link className='nav-left-link' to='/listings/new'>Sell a home</Link></div>
+                    {/* <div>Rent a home</div> */}
                 </div>
         </div>
     )

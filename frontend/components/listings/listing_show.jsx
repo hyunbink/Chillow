@@ -1,13 +1,13 @@
 import React from "react";
 // import ListingMap from "../listings_map/listings_map";
 import MarkerManager from "../../util/marker_manager";
+import { Link } from "react-router-dom";
 
 class ListingShow extends React.Component{
     constructor(props){
         super(props);
-        this.state = props[this.props.listingId];
-        
-        
+        // this.state = props[this.props.listingId];
+        this.currentUserId = props.currentUserId
         // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
     }
     
@@ -21,7 +21,7 @@ class ListingShow extends React.Component{
         // console.log("props", this.props )
         // need to key into next state with listingId
         // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
-        console.log(this.props)
+        console.log('modal props', this.props)
         let icon = 'house'
         this.map = new google.maps.Map(this.mapNode, this.mapOptions); 
         this.MarkerManager = new MarkerManager(this.map, "", icon);
@@ -31,7 +31,8 @@ class ListingShow extends React.Component{
     render(){
 
         if (!this.props.listing) return null;
-        const { street, city, state, zip_code, sqft, beds, baths, price, photoUrls  } = this.props.listing
+        const { street, city, state, zip_code, sqft, beds, baths, price, photoUrls, owner_id, id  } = this.props.listing;
+        // const { session } = this.state;
         console.log("render-props", this.props)
         
         let lastPhotoBlur;
@@ -43,7 +44,9 @@ class ListingShow extends React.Component{
             lastPhotoBlur = 'last-photo-blur-odd';
             blurContainer = 'blur-container-odd'
         }
-
+        
+        let edit;
+        // if (owner_id === this.currentUserId) {<Link className='nav-left-link' to={`/listings/${id}/edit</div>`}>Edit your listing</Link>};
         return(
             <div className="listing-div">
                 <div className="listing-div-left">
@@ -87,7 +90,11 @@ class ListingShow extends React.Component{
                         <div ref={ map => this.mapNode = map } id='map-container'>
                         </div>
                     </div>
-
+                        {owner_id === this.currentUserId ? 
+                        <div className="show-edit-link-container">
+                            <Link className='show-edit-link' onClick={this.props.closeModal} to={`/listings/${id}/edit`}>Edit your listing</Link>
+                        </div> : 
+                        null}
                 </div>
             </div>
         )

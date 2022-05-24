@@ -4,7 +4,6 @@ import MarkerManager from "../../util/marker_manager";
 
 class ListingForm extends React.Component {
     constructor(props){
-        // this.state = props.listing
         super(props);
         this.state = props.listing;
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,10 +15,10 @@ class ListingForm extends React.Component {
         let mapOptions;
         this.props.formType === 'Update Listing' ? 
         mapOptions = {
-            center: { lat: this.props.listing.latitude, lng: this.props.listing.longitude },     // coords for sf
+            center: { lat: this.props.listing.latitude, lng: this.props.listing.longitude },    
             zoom: 15
         } : mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 },     // coords for sf
+            center: { lat: 37.7758, lng: -122.435 },    
             zoom: 13
         };
 
@@ -27,12 +26,12 @@ class ListingForm extends React.Component {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         if (this.props.formType === 'Update Listing' ){this.MarkerManager = new MarkerManager(this.map, "", 'pin');
         this.MarkerManager.updateMarkers([this.props.listing])     }   
+
+        this.setState( { photoFiles: [] } )
     }
 
     handleFile(e){
-        return e=> {
-            this.setState({ photoFiles: e.currentTarget.value})  // is is photoFile or photo or photosUrl?
-        }
+        this.setState({ photoFiles: [...this.state.photoFiles, e.currentTarget.files]})
     }
 
     update(field){
@@ -55,20 +54,21 @@ class ListingForm extends React.Component {
         formData.append('listing[beds]', this.state.beds);
         formData.append('listing[baths]', this.state.baths);
         formData.append('listing[price]', this.state.price);
-        formData.append('listing[owner_id]', this.state.owner_id);
-        console.log('in submit', this.state)
-        if (this.state.photoFiles) {
-            console.log("in the submit photo files")
-            formData.append('listing[photos]', this.state.photoFiles)   // take outside of if conditional?
-        }
+        formData.append('listing[owner_id]', this.state.owner_id); 
+
+        this.state.photoFiles.forEach(element => {
+            formData.append('listing[photos][]', element[0]);
+            console.log('element', element[0])
+        });
+        
         if (this.props.formType === 'Update Listing') {
             this.props.action(formData, this.state.id).then(action => {
-                this.props.history.push(`/listings`);
+                // this.props.history.push(`/listings`);
                 this.props.openModal('show', action.listing.id); 
             });
         } else {
             this.props.action(formData).then(action => {
-                this.props.history.push(`/listings`);
+                // this.props.history.push(`/listings`);
                 this.props.openModal('show', action.listing.id);
             });
         }
@@ -89,10 +89,10 @@ class ListingForm extends React.Component {
             <div className="form-div-container">
                 <form className="form-div" onSubmit={this.handleSubmit}>
                     <div className="form-div-left">
-                <div className="form-photos-new-prev">{this.preview()}</div>
+                <div className="form-photos-new-prev"></div>  
                         <div className="form-photo-div">
                             <label id="form-photo-label">
-                                Click here or Drag 'n' drop to add photo:<input type='file' onChange={this.handleFile} />
+                                Click here or Drag 'n' drop to add photo:<input type='file' multiple onChange={this.handleFile} />
                             </label>
                         </div>
                     </div>
