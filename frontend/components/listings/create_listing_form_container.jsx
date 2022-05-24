@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ListingForm from './listing_form';
 import { createListing } from '../../actions/listing_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
-    console.log('in the container state', state)
     return({
         listing: {
             street: '' , 
@@ -17,6 +17,8 @@ const mSTP = (state, ownProps) => {
             price: '' , 
             latiude: '' ,
             longitude: '' ,
+            photoUrls: '',
+            owner_id: ''
             // photoUrls: '' or is it photos: '' ?
             // include owner_id? or have it do it by itself?
         },
@@ -25,7 +27,8 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    action: listing => dispatch(createListing(listing))
+    action: listing => dispatch(createListing(listing)),
+    openModal: (modal, listingId) => dispatch(openModal(modal, listingId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(ListingForm));

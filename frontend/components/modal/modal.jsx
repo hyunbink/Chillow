@@ -3,7 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ListingShowContainer from '../listings/listing_show_container';
 
-function Modal({modal, closeModal, listing}) {
+function Modal({modal, closeModal, listingId}) {
     if (!modal) {
         return null;
     }
@@ -11,7 +11,7 @@ function Modal({modal, closeModal, listing}) {
     let component;
     switch (modal) {
         case 'show':
-            component = <ListingShowContainer listing={listing} />;
+            component = <ListingShowContainer listingId={listingId} />;
             break;
         default:
             return null;
@@ -27,7 +27,7 @@ function Modal({modal, closeModal, listing}) {
 
 const mSTP = state => ({
     modal: state.ui.modal,
-    listing: state.ui.listing
+    listingId: state.ui.listingId
 });
 
 const mDTP = dispatch => ({

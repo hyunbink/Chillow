@@ -6,16 +6,20 @@ export const fetchListing = listingId => $.ajax({
     url: `/api/listings/${listingId}`
 });
 
-export const createListing = listing => $.ajax({
+export const createListing = formData => $.ajax({
     url: `/api/listings`,
     method: `POST`,
-    data: { listing }
+    data: formData,
+    contentType: false,
+    processData: false
 });
 
-export const updateListing = listing => $.ajax({
-    url: `/api/listings/${listing.id}`,
+export const updateListing = (formData, listingId) => $.ajax({
+    url: `/api/listings/${listingId}`,
     method: `PATCH`,
-    data: { listing }
+    data: formData,
+    contentType: false,
+    processData: false
 });
 
 export const deleteListing = listingId => $.ajax({

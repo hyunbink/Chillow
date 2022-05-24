@@ -18,11 +18,6 @@ class ListingIndex extends React.Component{
             <div className="index-div-right">
                 <div key='listings' className="index-all-listings">
                     {listingsArr.map((listing,j)=>(
-                        // <Link style={{textDecoration: 'none', 
-                        // fontFamily: 'Arial, Helvetica, sans-serif',
-                        // color:'rgb(39, 39, 39)'}} 
-                        // to={`/listings/${listing.id}`} 
-                        // key={j} >
                             <div key={j} className="index-listing" onClick={()=>this.props.openModal('show',  listing.id)} >
                                 <div className="index-listing-photo-div">
                                     <img className="index-listing-photos" 

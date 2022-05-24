@@ -217,9 +217,13 @@
 
 
 // listings forms
+.form-div-container{
+    height: calc(100vh -  100px);
+    
+}
+
 .form-div{
     display: flex;
-    // height: calc(100vh -  100px);
     width: calc();
     height: calc(100vh - 80px);
     background-color: white;
@@ -233,6 +237,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .form-div-right{
@@ -260,3 +265,11 @@
     flex-direction: column;
 }
 
+.form-photo-preview{
+    width: auto;
+    height: 125px;
+}
+
+.form-photos-new-prev{
+    text-align: center;
+}

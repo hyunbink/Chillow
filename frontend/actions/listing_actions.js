@@ -40,8 +40,8 @@ export const createListing = listing => dispatch => {
         .then(listing => dispatch(receiveListing(listing)))
 }
 
-export const updateListing = listing => dispatch => {
-    return ListingAPIUtil.updateListing(listing)
+export const updateListing = (listing, id) => dispatch => {
+    return ListingAPIUtil.updateListing(listing, id)
         .then(listing => dispatch(receiveListing(listing)))
 }
 
