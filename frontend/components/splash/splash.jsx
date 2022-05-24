@@ -15,8 +15,18 @@ const Splash = props => {
                     <br/>
             </div>
                 <div>
-                    <div><Link className='nav-left-link' to='/listings'>Buy a home</Link></div>
-                    <div><Link className='nav-left-link' to='/listings/new'>Sell a home</Link></div>
+                    <div><Link className='nav-left-link' to='/listings'>
+                        <img src={window.buyHome} className='splash-img' alt='buy-home-png'></img>
+                        <h1 className='splash-h1'>Buy a home</h1>
+                        <p className='splash-p'>Find your place with an immersive photo experience.</p>
+                        <div><button className='splash-button'>Search Homes</button></div>
+                    </Link></div>
+                    <div><Link className='nav-left-link' to='/listings/new'>
+                        <img src={window.sellHome} className='splash-img' alt='sell-home-png'></img>
+                        <h1 className='splash-h1'>Sell a home</h1>
+                        <p className='splash-p'>No matter what path you take to sell your home, we can help you navigate a successful sale.</p>
+                        <div><button className='splash-button'>See your options</button></div>
+                    </Link></div>
                     {/* <div>Rent a home</div> */}
                 </div>
         </div>
