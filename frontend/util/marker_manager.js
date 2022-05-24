@@ -2,7 +2,7 @@ class MarkerManager {
     constructor(map, handleClick, icon){
         this.map = map;
         this.handleClick = handleClick;
-        this.markers = {};
+        this.markers = [];
         this.icon = icon
         this.icon2 = icon
 
@@ -24,6 +24,7 @@ class MarkerManager {
     }
     
     createMarkerFromListing(listing) {
+        this.clearMarkers();
         const position = new google.maps.LatLng(listing.latitude, listing.longitude);
         
         // for display hover window over marker
@@ -93,9 +94,55 @@ class MarkerManager {
         // this.markers[marker.listingId] = marker;
     };
 
+    createMarkerFromUpdate(lat, lng) {
+        this.clearMarkers();
+        const position = new google.maps.LatLng(lat, lng);
+        const mouseOver = () => {
+            marker.setIcon(this.icon2);
+        };
+        const mouseOut = () => {
+            marker.setIcon(this.icon);
+        };
+        if (this.icon !== 'house') {
+            this.icon = {
+                url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                // scaledSize: new google.maps.Size(60,60)
+            };
+            this.icon2 = {
+                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            }
+        } else {
+            this.icon = {
+                url: window.house,
+                scaledSize: new google.maps.Size(60,60)
+            };
+            this.icon2 = {
+                url: window.house2,
+                scaledSize: new google.maps.Size(60,60)
+            }
+            };
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            icon: this.icon
+        });
+        marker.addListener("mouseover", mouseOver);
+        marker.addListener("mouseout", mouseOut);
+        marker.addListener("click", ()=>(this.handleClick('show',listing.id)));
+        this.markers.push(marker);
+        
+        console.log('markers from form', this.markers)
+    };
+
     removeMarker(marker) {
         this.markers[marker.listingId].setMap(null);
         delete this.markers[marker.listingId];
+    }
+
+    clearMarkers(){
+        for (let i = 0; i < this.markers.length; i++) {
+            this.markers[i].setMap(null);
+        }
     }
 }
 

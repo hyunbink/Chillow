@@ -24,8 +24,19 @@ class ListingForm extends React.Component {
 
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        if (this.props.formType === 'Update Listing' ){this.MarkerManager = new MarkerManager(this.map, "", 'pin');
-        this.MarkerManager.updateMarkers([this.props.listing])     }   
+        this.MarkerManager = new MarkerManager(this.map, "", 'pin');
+        // add conditional to have the click listener only when creating new form
+        
+
+        if (this.props.formType === 'Update Listing' ){
+            this.MarkerManager = new MarkerManager(this.map, "", 'pin');
+            this.MarkerManager.updateMarkers([this.props.listing])     
+        } else {
+            this.map.addListener("click", (e) => {
+            this.setState({ latitude: e.latLng.lat(), longitude: e.latLng.lng() });
+            this.MarkerManager.createMarkerFromUpdate(this.state.latitude, this.state.longitude);
+        });
+        }
 
         this.setState( { photoFiles: [] } )
     }
@@ -58,7 +69,6 @@ class ListingForm extends React.Component {
 
         this.state.photoFiles.forEach(element => {
             formData.append('listing[photos][]', element[0]);
-            console.log('element', element[0])
         });
         
         if (this.props.formType === 'Update Listing') {
