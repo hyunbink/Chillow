@@ -94,7 +94,7 @@ class MarkerManager {
         // this.markers[marker.listingId] = marker;
     };
 
-    createMarkerFromUpdate(lat, lng) {
+    createMarkerFromForm(lat, lng) {
         this.clearMarkers();
         const position = new google.maps.LatLng(lat, lng);
         const mouseOver = () => {
@@ -128,10 +128,7 @@ class MarkerManager {
         });
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
-        marker.addListener("click", ()=>(this.handleClick('show',listing.id)));
         this.markers.push(marker);
-        
-        console.log('markers from form', this.markers)
     };
 
     removeMarker(marker) {

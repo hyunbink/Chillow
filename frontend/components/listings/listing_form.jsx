@@ -8,6 +8,7 @@ class ListingForm extends React.Component {
         this.state = props.listing;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.mapHeader = ""
     }
     
     componentDidMount(){
@@ -27,14 +28,15 @@ class ListingForm extends React.Component {
         this.MarkerManager = new MarkerManager(this.map, "", 'pin');
         // add conditional to have the click listener only when creating new form
         
-
+        
         if (this.props.formType === 'Update Listing' ){
-            this.MarkerManager = new MarkerManager(this.map, "", 'pin');
-            this.MarkerManager.updateMarkers([this.props.listing])     
+            this.MarkerManager.createMarkerFromForm(this.state.latitude, this.state.longitude);
+            this.mapHeader = "See below for your listing's coordinates"
         } else {
+            this.mapHeader = 'Place pin on map to get coordinates';
             this.map.addListener("click", (e) => {
             this.setState({ latitude: e.latLng.lat(), longitude: e.latLng.lng() });
-            this.MarkerManager.createMarkerFromUpdate(this.state.latitude, this.state.longitude);
+            this.MarkerManager.createMarkerFromForm(this.state.latitude, this.state.longitude);
         });
         }
 
@@ -84,6 +86,10 @@ class ListingForm extends React.Component {
         }
         
     }
+
+    // handleInputValues(){
+        // input value corrections in here
+    // }
 
     preview(){
         console.log('preview-state', this.state);
@@ -137,7 +143,7 @@ class ListingForm extends React.Component {
                         </label>
                             <br/>
                         <div className="geocode-container">
-                            <h1>Place pin on map to get coordinates{" "}<img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" 
+                            <h1>{this.mapHeader}{" "}<img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" 
                             id='pin' />
                 <div className="form-map-container">
                 <div ref={ map => this.mapNode = map } id='map-container'>
