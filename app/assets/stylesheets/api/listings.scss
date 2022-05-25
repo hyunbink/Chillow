@@ -7,6 +7,7 @@
     display: flex;
     height: 100vh;
     background-color: white;
+    box-sizing: border-box;
 }
 
 .listing-price{
@@ -61,12 +62,16 @@
 .listing-div-left{
     width: 75%;
     overflow-y: scroll;
+    padding-left: 5px;
 }
 
 .listing-div-right{
     width: 50%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
     // justify-content: ;
 }
 
@@ -88,18 +93,25 @@
 }
 
 .listings-mini-map{
-    overflow-y: scroll;
+    // overflow-y: scroll;
     width: 100%;
     height: 50%;
+    padding-top: 10px;
 }
 
-#mini-map{
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
-    border: 10px;
-    padding: 10px;
+// #mini-map{
+//     box-sizing: border-box;
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 8px;
+//     border: 10px;
+//     padding: 10px;
+// }
+
+#show-map{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
 }
 
 .show-edit-link-container{
@@ -289,12 +301,23 @@
 }
 
 .form-photo-div{
-    border: solid 3px yellow;
     width: 75%;
     height: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+}
+
+.form-photo-drop-zone{
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    width: 100%;
+    height: 100%;
+    &:hover{
+        background-color: blue;
+    }
 }
 
 #form-photo-label{
@@ -394,6 +417,7 @@
             font-size: 16px;
             color: rgb(0, 106, 255);
         }
+    }
 }
 
 .form-map-container{
@@ -401,7 +425,12 @@
 	height: 500px;
     margin-top: 16px;
     margin-bottom: 16px;
-    }
+}
+
+#form-map{
+	width: 100%;
+	height: 100%;
+    border-radius: 5px;
 }
 
 .form-input-button-div{
@@ -435,3 +464,4 @@
         background-color: rgb(14, 52, 109);
     }
 }
+

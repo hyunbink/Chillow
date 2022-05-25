@@ -107,8 +107,8 @@ class ListingForm extends React.Component {
                     <div className="form-div-left">
                 {/* <div className="form-photos-new-prev"></div>   */}
                         <div className="form-photo-div">
-                            <label id="form-photo-label">
-                                Click here or Drag 'n' drop to add photo:<input type='file' multiple onChange={this.handleFile} />
+                            <label className="form-photo-drop-zone" id="form-photo-label">
+                                Click or Drag 'n' drop here to add photos:<input type='file' multiple onChange={this.handleFile} />
                             </label>
                         </div>
                     </div>
@@ -186,7 +186,7 @@ class ListingForm extends React.Component {
                             <h1>{this.mapHeader}{" "}<img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" 
                                 id='pin' />
                                 <div className="form-map-container">
-                                    <div ref={ map => this.mapNode = map } id='map-container'></div>
+                                    <div ref={ map => this.mapNode = map } id='form-map'></div>
                                 </div>
                             </h1>
 

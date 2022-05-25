@@ -87,7 +87,7 @@ class ListingShow extends React.Component{
 
                     
                     <div className="listings-mini-map">
-                        <div ref={ map => this.mapNode = map } id='map-container'>
+                        <div ref={ map => this.mapNode = map } id='show-map'>
                         </div>
                     </div>
                         {owner_id === this.currentUserId ? 
