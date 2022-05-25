@@ -22,8 +22,6 @@ class Api::ListingsController < ApplicationController
 
     def update 
         @listing = Listing.find_by(id: params[:id])
-        print listing_params
-        print "))))))OOOOOOOOOOOOOOOOO((((((((("
         if @listing && @listing.owner_id == current_user.id && @listing.update(listing_params) 
             render :show
         else

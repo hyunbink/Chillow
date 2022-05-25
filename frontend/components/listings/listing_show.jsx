@@ -55,7 +55,7 @@ class ListingShow extends React.Component{
                         ))}
                         <div className={blurContainer}>
                             <img key={photoUrls.length} className={lastPhotoBlur} src={photoUrls[0]} alt="listing-photo"></img>
-                            <div className="blur-img-text" onClick={console.log('favorite')}>Click to Favorite</div>
+                            <div className="blur-img-text" onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listingId})}>Click to Save</div>
                             {/* <button className="tour-button">Request a tour</button>   */}
                             {/* maybe have button show email and say 'email owner to request tour ??' */}
                         </div>

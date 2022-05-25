@@ -23,6 +23,11 @@ export const updateListing = (formData, listingId) => $.ajax({
 });
 
 export const deleteListing = listingId => $.ajax({
-    url: `/api/reports/${listingId}`,
+    url: `/api/listings/${listingId}`,
     method: 'DELETE'
 });
+
+export const savedListings = listingIds => $.ajax({
+    url: `/api/listings/savedListings`,
+    data: { listingIds }
+}); 

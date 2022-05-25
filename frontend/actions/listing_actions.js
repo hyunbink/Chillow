@@ -49,3 +49,8 @@ export const deleteListing = listingId => dispatch => {
     return ListingAPIUtil.deleteListing(listingId)
         .then(_ => dispatch(removeListing(listingId)))
 }
+
+export const savedListings = listingIds => dispatch => {
+    return ListingAPIUtil.savedListings(listingIds)
+        .then(listings => dispatch(receiveAllListings(listings)))
+}

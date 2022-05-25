@@ -27,6 +27,11 @@ class Listing < ApplicationRecord
 
     has_many_attached :photos
 
+    has_many :saves,
+        primary_key: :id,
+        foreign_key: :listing_id,
+        class_name: :Save
+
     belongs_to :owner,
         primary_key: :id,
         foreign_key: :owner_id,

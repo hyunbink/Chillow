@@ -143,15 +143,21 @@
     margin-bottom: 5%;
     height: 30px;
     width: 80%;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(13, 69, 153);
+        border-color: rgb(13, 69, 153);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+    &:active{
+        background-color: rgb(14, 52, 109);
+    }
 }
 
-.show-edit-link:hover{
-    cursor: pointer;
-    background-color: rgba(85,179,243,255);
-    border-color: rgba(85,179,243,255);
-    color: rgb(255, 255, 255);
-    border-radius: 4px;
-}
+// .show-edit-link:hover{
+    
+// }
 
 
 
@@ -290,6 +296,7 @@
     align-items: center;
     flex-direction: column;
     border-right: dashed 3px rgb(0, 106, 255);
+    overflow-y: auto;
 }
 
 .form-div-right{
@@ -332,12 +339,17 @@
 }
 
 .form-photo-preview{
-    width: auto;
-    height: 125px;
+    border: solid 1px white;
+    width: 400px;
+    height: 200px;
 }
 
 .form-photos-new-prev{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .form-input-label{

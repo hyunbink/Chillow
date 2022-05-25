@@ -3,6 +3,7 @@ import { fetchListing } from '../../actions/listing_actions';
 import ListingShow from './listing_show';
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
+import { createSave } from '../../actions/save_actions';
 
 const mSTP = (state, ownProps) => {
     // console.log("conatiner stateteetet", state)
@@ -17,7 +18,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     fetchListing: listingId => dispatch(fetchListing(listingId)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    createSave: save => dispatch(createSave(save))
 });
 
 export default withRouter(connect(mSTP, mDTP)(ListingShow));
