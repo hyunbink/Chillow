@@ -20,8 +20,6 @@ const mSTP = (state, ownProps) => {
             longitude: '' ,
             photoUrls: '',
             owner_id: ''
-            // photoUrls: '' or is it photos: '' ?
-            // include owner_id? or have it do it by itself?
         },
         formType: 'Create Listing'
     });

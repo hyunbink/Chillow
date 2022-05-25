@@ -278,17 +278,18 @@
     width: calc();
     height: calc(100vh - 80px);
     background-color: white;
-    border: 3px solid red;
+    // border: 3px solid red;
 }
 
 .form-div-left{
     width: 100%;
     // height: 100%;
-    border: 3px solid blue ;
+    // border: 3px solid blue ;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-right: dashed 3px rgb(0, 106, 255);
 }
 
 .form-div-right{
@@ -302,7 +303,7 @@
 
 .form-photo-div{
     width: 75%;
-    height: 25%;
+    height: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,11 +313,14 @@
 .form-photo-drop-zone{
     box-sizing: border-box;
     border-radius: 5px;
-    background-color: yellowgreen;
+    border: dashed 3px rgb(0, 106, 255);
     width: 100%;
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
     &:hover{
-        background-color: blue;
+        background-color: rgb(0, 106, 255);
+        color: white;
     }
 }
 

@@ -75,12 +75,12 @@ class ListingForm extends React.Component {
         
         if (this.props.formType === 'Update Listing') {
             this.props.action(formData, this.state.id).then(action => {
-                // this.props.history.push(`/listings`);
+                this.props.history.push(`/listings`);
                 this.props.openModal('show', action.listing.id); 
             });
         } else {
             this.props.action(formData).then(action => {
-                // this.props.history.push(`/listings`);
+                this.props.history.push(`/listings`);
                 this.props.openModal('show', action.listing.id);
             });
         }
