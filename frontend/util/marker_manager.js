@@ -58,27 +58,13 @@ class MarkerManager {
             marker.setIcon(this.icon);
         };
         
-        if (this.icon !== 'house') {
-            this.icon = {
-                url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-                // scaledSize: new google.maps.Size(60,60)
-            };
-            this.icon2 = {
-                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-            }
-        } else {
-            this.icon = {
-                url: window.house,
-                scaledSize: new google.maps.Size(60,60)
-            };
-            this.icon2 = {
-                url: window.house2,
-                scaledSize: new google.maps.Size(60,60)
-            }
-            };
         
-        
-        
+        this.icon = {
+            url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+        };
+        this.icon2 = {
+            url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+        };
         
         const marker = new google.maps.Marker({
             position,
@@ -103,24 +89,15 @@ class MarkerManager {
         const mouseOut = () => {
             marker.setIcon(this.icon);
         };
-        if (this.icon !== 'house') {
-            this.icon = {
-                url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-                // scaledSize: new google.maps.Size(60,60)
-            };
-            this.icon2 = {
-                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-            }
-        } else {
-            this.icon = {
-                url: window.house,
-                scaledSize: new google.maps.Size(60,60)
-            };
-            this.icon2 = {
-                url: window.house2,
-                scaledSize: new google.maps.Size(60,60)
-            }
-            };
+        
+        this.icon = {
+            url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            // scaledSize: new google.maps.Size(60,60)
+        };
+        this.icon2 = {
+            url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+        };
+        
         const marker = new google.maps.Marker({
             position,
             map: this.map,
