@@ -92,7 +92,6 @@ class MarkerManager {
         
         this.icon = {
             url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-            // scaledSize: new google.maps.Size(60,60)
         };
         this.icon2 = {
             url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"

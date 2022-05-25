@@ -103,9 +103,9 @@ class ListingForm extends React.Component {
         const { street, city, zip_code, state, latitude, longitude, sqft, beds, baths, price, photoUrls } = this.state;
         return(
             <div className="form-div-container">
-                <form className="form-div" onSubmit={this.handleSubmit}>
+                <form className="form-div-listing" onSubmit={this.handleSubmit}>
                     <div className="form-div-left">
-                <div className="form-photos-new-prev"></div>  
+                {/* <div className="form-photos-new-prev"></div>   */}
                         <div className="form-photo-div">
                             <label id="form-photo-label">
                                 Click here or Drag 'n' drop to add photo:<input type='file' multiple onChange={this.handleFile} />
@@ -113,53 +113,106 @@ class ListingForm extends React.Component {
                         </div>
                     </div>
                     <div className="form-div-right">
-                        <label className="form-input-label" >
-                            Address:<input className="form-input" id="wide-input" type='text' value={street} onChange={this.update('street')} />
-                        </label>
-                            <br/>
-                        <label className="form-input-label" >
-                            City:<input className="form-input" id="wide-input" type='text' value={city} onChange={this.update('city')} />
-                        </label>
-                            <br/>
-                        <label className="form-input-label" >
-                            State:<input className="form-input" type='text' placeholder="use state abv like 'CA'" value={state} onChange={this.update('state')} />
-                        </label>
-                        <label className="form-input-label" >
-                            Zip Code:<input className="form-input" type='number' min='9999' max='100000' value={zip_code} onChange={this.update('zip_code')} />
-                        </label>
-                            <br/>
-                        <label className="form-input-label" >
-                            Price:<input className="form-input" type='number' placeholder="$" value={price} onChange={this.update('price')} />
-                        </label>
-                            <br/>
-                        <label className="form-input-label" >
-                            Beds:<input className="form-input" type='number' value={beds} onChange={this.update('beds')} />
-                        </label>
-                        <label className="form-input-label" >
-                            Baths:<input className="form-input" type='number' value={baths} onChange={this.update('baths')} />
-                        </label>
-                        <label className="form-input-label" >
-                            Sqft:<input className="form-input" type='number' value={sqft} onChange={this.update('sqft')} />
-                        </label>
-                            <br/>
-                        <div className="geocode-container">
-                            <h1>{this.mapHeader}{" "}<img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" 
-                            id='pin' />
-                <div className="form-map-container">
-                <div ref={ map => this.mapNode = map } id='map-container'>
-                        </div>
-                </div>
-                            </h1>
+                        <div className="form-input-div">
                             <label className="form-input-label" >
-                                Latitude:<input className="form-input" type='text' value={latitude} onChange={this.update('latitude')} />
+                                Address:
                             </label>
                                 <br/>
-                            <label className="form-input-label" >
-                                Longitude:<input className="form-input" type='text' value={longitude} onChange={this.update('longitude')} />
-                            </label>
+                            <input className="form-input" id="wide-input" type='text' value={street} onChange={this.update('street')} />
                         </div>
-                            <br/>
-                        <input className="form-submit" type='submit' value={this.props.formType} />
+                                
+                        <div className="form-input-div">
+                            <label className="form-input-label" >
+                                City:
+                            </label>
+                                <br/>
+                            <input className="form-input" id="wide-input" type='text' value={city} onChange={this.update('city')} />
+                        </div>
+
+                        <div className="form-smaller-inputs">
+                            <div className="form-input-div">
+                                <label className="form-input-label" >
+                                    State:
+                                </label>
+                                    <br/>
+                                <input id='short-input-location' className="form-input" type='text' minLength='2' maxLength='2' placeholder="use state abv like 'CA'" value={state} onChange={this.update('state')} />
+                            </div>
+
+                            <div className="form-input-div">
+                                <label className="form-input-label" >
+                                    Zip Code:
+                                </label>
+                                    <br/>
+                                <input id='short-input-location' placeholder="5-digits" className="form-input" type='number' min='9999' max='100000' value={zip_code} onChange={this.update('zip_code')} />
+                            </div>
+
+                            <div className="form-input-div">
+                                <label className="form-input-label" >
+                                    Price:
+                                </label>
+                                    <br/>
+                                <input id='short-input-location' className="form-input" type='number' placeholder="numbers only: no , $" value={price} onChange={this.update('price')} />
+                            </div>
+                        </div>
+
+
+                        <div className="form-smaller-inputs">
+                            <div className="form-input-div">
+                                <label className="form-input-label" >
+                                    Beds:
+                                </label>
+                                    <br/>
+                                <input id='short-input' min='0' className="form-input" type='number' value={beds} onChange={this.update('beds')} />
+                            </div>
+
+                            <div className="form-input-div">
+                                <label className="form-input-label" >
+                                    Baths:
+                                </label>
+                                    <br/>
+                                <input id='short-input' min='1' className="form-input" type='number' value={baths} onChange={this.update('baths')} />
+                            </div>
+
+                            <div className="form-input-div">
+                                <label className="form-input-label" >
+                                    Sqft:
+                                </label>
+                                    <br/>
+                                <input id='short-input-location' placeholder="numbers only: no ," className="form-input" type='number' value={sqft} onChange={this.update('sqft')} />
+                            </div>
+                        </div>
+
+                        <div className="form-map-div">
+                            <h1>{this.mapHeader}{" "}<img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" 
+                                id='pin' />
+                                <div className="form-map-container">
+                                    <div ref={ map => this.mapNode = map } id='map-container'></div>
+                                </div>
+                            </h1>
+
+                            <div className="form-coord-inputs">
+                                <div className="form-input-div">
+                                    <label className="form-input-label" >
+                                        Latitude:
+                                    </label>
+                                        <br/>
+                                    <input placeholder="read-only" className="form-input" type='text' value={latitude} onChange={this.update('latitude')} readOnly={true}/>
+                                </div>
+
+                                <div className="form-input-div">
+                                    <label className="form-input-label" >
+                                        Longitude:
+                                    </label>
+                                        <br/>
+                                    <input placeholder="read-only" className="form-input" type='text' value={longitude} onChange={this.update('longitude')} readOnly={true}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="form-input-div">
+                                <input className="form-submit" type='submit' value={this.props.formType} />
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
