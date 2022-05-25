@@ -91,11 +91,15 @@ class ListingForm extends React.Component {
         // input value corrections in here
     // }
 
-    preview(){
+    previewNewPhotos(){
+        console.log('preview-state-newPhoto', this.state.photoFiles);
+        return this.state.photoFiles ? 
+        this.state.photoFiles.map((photo, i) => <img className='form-photo-preview' key={i} src={URL.createObjectURL(photo[0])} alt='chosen-photo-file'></img>) : 
+        null
+    }
+    previewCurrentPhotos(){
         console.log('preview-state', this.state);
-            // need to retool rendering of photoFiles vs photoUrls, can't have both at same time ?
-        return this.state.photoFiles ? this.state.photoFiles.map((photo, i) => <img className='form-photo-preview' key={i} src={photo} alt='chosen-photo-file'></img>) :
-        this.state.photoUrls ? this.state.photoUrls.map((photo, j) => <img className='form-photo-preview' key={j} src={photo} alt='listings-photos'></img>) : 
+        return this.state.photoUrls ? this.state.photoUrls.map((photo, j) => <img className='form-photo-preview' key={j} src={photo} alt='listings-photos'></img>) : 
         null
     }
 
@@ -105,7 +109,7 @@ class ListingForm extends React.Component {
             <div className="form-div-container">
                 <form className="form-div-listing" onSubmit={this.handleSubmit}>
                     <div className="form-div-left">
-                {/* <div className="form-photos-new-prev"></div>   */}
+                <div className="form-photos-new-prev">{this.previewCurrentPhotos()}{this.previewNewPhotos()}</div>  
                         <div className="form-photo-div">
                             <label className="form-photo-drop-zone" id="form-photo-label">
                                 Click or Drag 'n' drop here to add photos:<input type='file' multiple onChange={this.handleFile} />
