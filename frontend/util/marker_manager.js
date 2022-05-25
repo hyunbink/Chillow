@@ -131,6 +131,35 @@ class MarkerManager {
         this.markers.push(marker);
     };
 
+    createMarkerFromShow(listing) {
+        const position = new google.maps.LatLng(listing.latitude, listing.longitude);
+        
+        this.icon = {
+            url: window.house,
+            scaledSize: new google.maps.Size(60,60)
+        };
+        this.icon2 = {
+            url: window.house2,
+            scaledSize: new google.maps.Size(60,60)
+        };
+
+        const mouseOver = () => {
+            marker.setIcon(this.icon2);
+        };
+        const mouseOut = () => {
+            marker.setIcon(this.icon);
+        };
+
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            icon: this.icon
+        });
+        marker.addListener("mouseover", mouseOver);
+        marker.addListener("mouseout", mouseOut);
+        this.markers.push(marker);
+    };
+
     removeMarker(marker) {
         this.markers[marker.listingId].setMap(null);
         delete this.markers[marker.listingId];

@@ -25,7 +25,7 @@ class ListingShow extends React.Component{
         let icon = 'house'
         this.map = new google.maps.Map(this.mapNode, this.mapOptions); 
         this.MarkerManager = new MarkerManager(this.map, "", icon);
-        this.MarkerManager.updateMarkers([this.props.listing])
+        this.MarkerManager.createMarkerFromShow(this.props.listing)
     }
     
     render(){
