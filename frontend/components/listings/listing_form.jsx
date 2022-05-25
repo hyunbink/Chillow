@@ -113,33 +113,33 @@ class ListingForm extends React.Component {
                         </div>
                     </div>
                     <div className="form-div-right">
-                        <label>
-                            Address:<input type='text' value={street} onChange={this.update('street')} />
+                        <label className="form-input-label" >
+                            Address:<input className="form-input" id="wide-input" type='text' value={street} onChange={this.update('street')} />
                         </label>
                             <br/>
-                        <label>
-                            City:<input type='text' value={city} onChange={this.update('city')} />
+                        <label className="form-input-label" >
+                            City:<input className="form-input" id="wide-input" type='text' value={city} onChange={this.update('city')} />
                         </label>
                             <br/>
-                        <label>
-                            State:<input type='text' placeholder="use state abv like 'CA'" value={state} onChange={this.update('state')} />
+                        <label className="form-input-label" >
+                            State:<input className="form-input" type='text' placeholder="use state abv like 'CA'" value={state} onChange={this.update('state')} />
                         </label>
-                        <label>
-                            Zip Code:<input type='number' min='9999' max='100000' value={zip_code} onChange={this.update('zip_code')} />
-                        </label>
-                            <br/>
-                        <label>
-                            Price:<input type='number' placeholder="$" value={price} onChange={this.update('price')} />
+                        <label className="form-input-label" >
+                            Zip Code:<input className="form-input" type='number' min='9999' max='100000' value={zip_code} onChange={this.update('zip_code')} />
                         </label>
                             <br/>
-                        <label>
-                            Beds:<input type='number' value={beds} onChange={this.update('beds')} />
+                        <label className="form-input-label" >
+                            Price:<input className="form-input" type='number' placeholder="$" value={price} onChange={this.update('price')} />
                         </label>
-                        <label>
-                            Baths:<input type='number' value={baths} onChange={this.update('baths')} />
+                            <br/>
+                        <label className="form-input-label" >
+                            Beds:<input className="form-input" type='number' value={beds} onChange={this.update('beds')} />
                         </label>
-                        <label>
-                            Sqft:<input type='number' value={sqft} onChange={this.update('sqft')} />
+                        <label className="form-input-label" >
+                            Baths:<input className="form-input" type='number' value={baths} onChange={this.update('baths')} />
+                        </label>
+                        <label className="form-input-label" >
+                            Sqft:<input className="form-input" type='number' value={sqft} onChange={this.update('sqft')} />
                         </label>
                             <br/>
                         <div className="geocode-container">
@@ -150,12 +150,12 @@ class ListingForm extends React.Component {
                         </div>
                 </div>
                             </h1>
-                            <label>
-                                Latitude:<input type='text' value={latitude} onChange={this.update('latitude')} />
+                            <label className="form-input-label" >
+                                Latitude:<input className="form-input" type='text' value={latitude} onChange={this.update('latitude')} />
                             </label>
                                 <br/>
-                            <label>
-                                Longitude:<input type='text' value={longitude} onChange={this.update('longitude')} />
+                            <label className="form-input-label" >
+                                Longitude:<input className="form-input" type='text' value={longitude} onChange={this.update('longitude')} />
                             </label>
                         </div>
                             <br/>
