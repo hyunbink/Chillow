@@ -19,6 +19,7 @@ import CreateListingFormContainer from './listings/create_listing_form_container
 import Modal from './modal/modal'
 import SavesContainer from './saves/saves_container';
 import SearchResults from './search/search_results_container';
+import UserListings from './listings/user_listings_container';
 
 const App = () => (
     <div>
@@ -32,6 +33,7 @@ const App = () => (
             <ProtectedRoute exact path="/listings/:listingId/edit" component={UpdateListingFormContainer} />
             <ProtectedRoute exact path="/listings/new" component={CreateListingFormContainer} />
             <ProtectedRoute exact path="/listings/saves" component={SavesContainer} />
+            <ProtectedRoute exact path="/listings/user/listings" component={UserListings} />
             <Route exact path="/listings/search/results" component={SearchResults} />
             <Route exact path="/listings" component={ListingIndexContainer} />
             <Route exact path="/" component={Splash} />
