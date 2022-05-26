@@ -11,25 +11,31 @@
 }
 
 .listing-price{
-    font-size: 36px;
+    font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .listing-physical-info{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.index-listing-char-info{
+    padding-bottom: 8px;
 }
 
 .listing-info{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .listing-address {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .listing-physical-div{
@@ -175,13 +181,25 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 5px solid purple;
+    // border: 5px solid purple;
     box-sizing: border-box;
+}
+
+.index-all-listings{
+    box-sizing: border-box;
+    padding: 8px;
+    // border: solid 3px green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .right-half{
     overflow-y: scroll;
     width: 100%;
+    padding-left: 3px;
+    box-shadow: -3px 1px 4px rgba(33, 33, 40, .5);
+    z-index: 1;
 }
 
 .left-half{
@@ -198,24 +216,38 @@
 }
 
 .index-listing-photos{
-    height: 50%;
+    height: 180px;
     width: 100%;
+    position: relative;
+    
 }
+
 
 .index-listing{
     box-sizing: border-box;
-    border: 5px solid red;
-    padding: 3px;
-    width: 100%;
+    // border: 5px solid red;
+    border-bottom: solid 3px rgba(0,106,254,255);
+    box-shadow: 0px 1px 4px rgb(33, 33, 40);
+    // padding: 3px;
+    margin: 3px;
+    width: 49%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .index-listing-photo-div{
     width: 100%;
-    height: 50%;
-    border: 5px solid blue;
+    height: 100%;
+    // border: 5px solid blue;
     position: relative;
+    object-fit: cover;
+}
+
+.index-listing-info{
+    padding-left: 11px;
+    
 }
 
 #filled-heart{
