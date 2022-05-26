@@ -7,10 +7,11 @@ export const createSave = (save) => {
     });
 };
 
-export const deleteSave = (listingId) => {
+export const deleteSave = (saveId) => {
     return $.ajax({
         method: 'DELETE',
-        url: `/api/saves/${listingId}`
+        url: `/api/saves/${saveId}`,
+        
     });
 };
 

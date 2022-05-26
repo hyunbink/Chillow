@@ -22,12 +22,13 @@ class Api::SavesController < ApplicationController
     end
 
     def destroy
-        @save = Save.find_by(user_id: current_user.id, listing_id: params[:id])
-        @user = current_user
+        @save = Save.find_by(id: params[:id] )
+        # debugger
+        # @user = current_user
 
-        if @save.destroy
+        if @save.destroy && @save.user_id == current_user.id
             @saves = saved_listings 
-            # render '/api/users/_user'
+            render json: @save
         else
             render json: { message: 'Nothing to destroy' }
         end

@@ -13,7 +13,7 @@ export default (state = {}, action) => {
             delete nxtState[action.listingId];
             return nxtState;
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, state, action.payload.listings)
+            return Object.assign({}, state, action.payload.listings);
         default:
             return state;
     }

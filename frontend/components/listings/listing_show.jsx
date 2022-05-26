@@ -44,9 +44,22 @@ class ListingShow extends React.Component{
             lastPhotoBlur = 'last-photo-blur-odd';
             blurContainer = 'blur-container-odd'
         }
+        let saver;
+        let saveId;
+        if (this.props.saves) {
+            console.log('looking-for-this-save-id', this.props.saves)
+            this.props.saves.forEach(element => {
+                if (element[1].user_id === this.props.currentUserId && element[1].listing_id === this.props.listingId) {
+                    saver = 'saved';
+                    saveId = element[0]
+                    console.log('saveId',saveId)
+                }
+            });
+            console.log(saver)
+        }
         
-        let edit;
-        // if (owner_id === this.currentUserId) {<Link className='nav-left-link' to={`/listings/${id}/edit</div>`}>Edit your listing</Link>};
+        
+
         return(
             <div className="listing-div">
                 <div className="listing-div-left">
@@ -56,7 +69,7 @@ class ListingShow extends React.Component{
                         <div className={blurContainer}>
                             <img key={photoUrls.length} className={lastPhotoBlur} src={photoUrls[0]} alt="listing-photo"></img>
                             <div className="blur-img-text" 
-                            onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})}>Click to Save</div>
+                            onClick={saver==='saved' ? ()=>this.props.deleteSave(saveId) : ()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})}>{saver==='saved' ? 'Click to Un-Save' : 'Click to Save' }</div>
                             {/* <button className="tour-button">Request a tour</button>   */}
                             {/* maybe have button show email and say 'email owner to request tour ??' */}
                         </div>
@@ -66,7 +79,7 @@ class ListingShow extends React.Component{
                 <div className="listing-div-right">
                     <nav className="listing-nav-header">
                         <img id='listing-logo' src={window.logo} alt="Chillow-logo"></img>
-                        <a id='heart'>♡ Save ♥ Saved </a>
+                        <a id='heart'> {saver==='saved' ? '♥ Saved' : '♡ Save' } </a>
                     </nav>
                     <div className="listing-physical-div">
                         <div className="listing-price-div">

@@ -14,9 +14,9 @@ export const receiveAllSaves = saves => ({
     saves
 });
 
-export const destroySave = currentUser => ({
+export const destroySave = save => ({
     type: DESTROY_SAVE,
-    currentUser
+    save
 });
 
 export const createSave = save => dispatch => (
@@ -25,9 +25,9 @@ export const createSave = save => dispatch => (
     ))
 );
 
-export const deleteSave = listingId => dispatch => (
-    SaveAPIUtil.deleteSave(listingId).then( (currentUser) => (
-    dispatch(destroySave(currentUser))
+export const deleteSave = save => dispatch => (
+    SaveAPIUtil.deleteSave(save).then( (save) => (
+    dispatch(destroySave(save))
     ))
 );
 
