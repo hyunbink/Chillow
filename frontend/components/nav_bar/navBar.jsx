@@ -32,7 +32,15 @@ const NavBar = ({ currentUser, logout }) => {
             </Link>
             <div className='nav-right'>
             <Link id='logout' onClick={logout} to="/">Logout</Link>
-            <span id='logged-in-user'><img id='user-symbol' src={window.userSymbol} alt='user-symbol'/>{currentUser.email}</span>
+            <span id='logged-in-user'>
+                <img id='user-symbol' src={window.userSymbol} alt='user-symbol'/>
+                {currentUser.email}
+                <div className="drop-down-box">
+                    <div className='drop-down-saves-link'><Link to={`/listings/saves`}>Saved Listings</Link></div>
+                    <div className='drop-down-saves-link'><Link id='#' onClick={logout} to="/">Your Listings</Link></div>
+                    <div className='drop-down-saves-link'><Link id='logout' onClick={logout} to="/">Logout</Link></div>
+                </div>
+                </span>
             </div>
         </nav>
     );
