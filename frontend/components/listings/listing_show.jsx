@@ -69,7 +69,8 @@ class ListingShow extends React.Component{
                         <div className={blurContainer}>
                             <img key={photoUrls.length} className={lastPhotoBlur} src={photoUrls[0]} alt="listing-photo"></img>
                             <div className="blur-img-text" 
-                            onClick={saver==='saved' ? ()=>this.props.deleteSave(saveId) : ()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})}>{saver==='saved' ? 'Click to Un-Save' : 'Click to Save' }</div>
+                            onClick={saver==='saved' ? ()=>this.props.deleteSave(saveId) : ()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})}
+                            >{saver==='saved' ? 'Click to Un-Save' : 'Click to Save' }</div>
                             {/* <button className="tour-button">Request a tour</button>   */}
                             {/* maybe have button show email and say 'email owner to request tour ??' */}
                         </div>
@@ -79,7 +80,8 @@ class ListingShow extends React.Component{
                 <div className="listing-div-right">
                     <nav className="listing-nav-header">
                         <img id='listing-logo' src={window.logo} alt="Chillow-logo"></img>
-                        <a id='heart'> {saver==='saved' ? '♥ Saved' : '♡ Save' } </a>
+                        <a onClick={saver==='saved' ? ()=>this.props.deleteSave(saveId) : ()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})} 
+                        id='heart'> {saver==='saved' ? '♥' : '♡' } </a>
                     </nav>
                     <div className="listing-physical-div">
                         <div className="listing-price-div">
