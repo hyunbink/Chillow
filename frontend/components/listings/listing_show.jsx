@@ -1,27 +1,19 @@
 import React from "react";
-// import ListingMap from "../listings_map/listings_map";
 import MarkerManager from "../../util/marker_manager";
 import { Link } from "react-router-dom";
 
 class ListingShow extends React.Component{
     constructor(props){
         super(props);
-        // this.state = props[this.props.listingId];
         this.currentUserId = this.props.currentUserId
-        // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
     }
     
     componentDidMount(){
-        // this.props.fetchListing(this.props.listingId) 
         this.mapOptions = {
-            center: { lat: this.props.listing.latitude, lng: this.props.listing.longitude },     // coords for sf
+            center: { lat: this.props.listing.latitude, lng: this.props.listing.longitude }, 
             zoom: 17
         };
-        // console.log("state", this.state )
-        // console.log("props", this.props )
-        // need to key into next state with listingId
-        // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
-        console.log('modal props', this.props)
+
         let icon = 'house'
         this.map = new google.maps.Map(this.mapNode, this.mapOptions); 
         this.MarkerManager = new MarkerManager(this.map, "", icon);
@@ -32,8 +24,6 @@ class ListingShow extends React.Component{
 
         if (!this.props.listing) return null;
         const { street, city, state, zip_code, sqft, beds, baths, price, photoUrls, owner_id, id  } = this.props.listing;
-        // const { session } = this.state;
-        console.log("render-props", this.props)
         
         let lastPhotoBlur;
         let blurContainer;
@@ -47,15 +37,12 @@ class ListingShow extends React.Component{
         let saver;
         let saveId;
         if (this.props.saves) {
-            console.log('looking-for-this-save-id', this.props.saves)
             this.props.saves.forEach(element => {
                 if (element[1].user_id === this.props.currentUserId && element[1].listing_id === this.props.listingId) {
                     saver = 'saved';
                     saveId = element[0]
-                    console.log('saveId',saveId)
                 }
             });
-            console.log(saver)
         }
         
         
@@ -71,8 +58,6 @@ class ListingShow extends React.Component{
                             <div className="blur-img-text" 
                             onClick={saver==='saved' ? ()=>this.props.deleteSave(saveId) : ()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})}
                             >{saver==='saved' ? 'Click to Un-Save' : 'Click to Save' }</div>
-                            {/* <button className="tour-button">Request a tour</button>   */}
-                            {/* maybe have button show email and say 'email owner to request tour ??' */}
                         </div>
                         
                         

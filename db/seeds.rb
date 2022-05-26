@@ -10,8 +10,10 @@ require 'open-uri'
 
 User.destroy_all
 Listing.destroy_all 
+Save.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('listings')
+ActiveRecord::Base.connection.reset_pk_sequence!('saves')
 
 demo = User.create(email: 'demologin@aa.io', password: 'password')
 user_1 = User.create(email:'user1@aa.io', password:'111111')
