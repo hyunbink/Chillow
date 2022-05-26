@@ -1,6 +1,9 @@
 import React from "react";
 import MarkerManager from "../../util/marker_manager";
 import { Link } from "react-router-dom";
+import { FaHeart, FaRegHeart } from 'react-icons/Fa';
+
+
 
 class ListingShow extends React.Component{
     constructor(props){
@@ -66,7 +69,9 @@ class ListingShow extends React.Component{
                     <nav className="listing-nav-header">
                         <img id='listing-logo' src={window.logo} alt="Chillow-logo"></img>
                         <a onClick={saver==='saved' ? ()=>this.props.deleteSave(saveId) : ()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})} 
-                        id='heart'> {saver==='saved' ? '♥' : '♡' } </a>
+                        id='heart'> {saver==='saved' ? <FaHeart id="show-filled-heart"  />
+                        : <FaRegHeart id="show-empty-heart" />
+                    } </a>
                     </nav>
                     <div className="listing-physical-div">
                         <div className="listing-price-div">

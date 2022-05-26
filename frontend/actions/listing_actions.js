@@ -4,6 +4,7 @@ export const RECEIVE_ALL_LISTINGS = 'RECEIVE_ALL_LISTINGS';
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const REMOVE_LISTING = 'REMOVE_LISTING';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_SEARCH_LISTINGS = 'RECEIVE_SEARCH_LISTINGS'
 
 const receiveAllListings = listings => ({
     type: RECEIVE_ALL_LISTINGS,
@@ -24,6 +25,11 @@ const receiveErrors = errors => ({
     type: RECEIVE_ERRORS,
     errors
 });
+
+const receiveSearchListings = listings => ({
+    type: RECEIVE_SEARCH_LISTINGS,
+    listings
+})
 
 export const fetchAllListings = () => dispatch => {
     return ListingAPIUtil.fetchAllListings()
@@ -50,7 +56,12 @@ export const deleteListing = listingId => dispatch => {
         .then(_ => dispatch(removeListing(listingId)))
 }
 
-export const savedListings = listingIds => dispatch => {
-    return ListingAPIUtil.savedListings(listingIds)
-        .then(listings => dispatch(receiveAllListings(listings)))
+// export const savedListings = listingIds => dispatch => {
+//     return ListingAPIUtil.savedListings(listingIds)
+//         .then(listings => dispatch(receiveAllListings(listings)))
+// }
+
+export const search = query => dispatch => {
+    return ListingAPIUtil.search(query)
+        .then(listings => dispatch(receiveSearchListings(listings)))
 }

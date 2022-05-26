@@ -27,3 +27,8 @@ export const deleteListing = listingId => $.ajax({
     method: 'DELETE'
 });
 
+export const search = query => $.ajax({
+    url: `/api/listings/search`,
+    data: { query }
+});
+

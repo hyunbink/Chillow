@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import SearchBar from '../search/search_bar_container';
 
 const Splash = props => {
 
@@ -9,7 +9,7 @@ const Splash = props => {
             <div className='homeBanner'>
                 <div className="call-to-action">
                     <h1 id='action-header'>Find it. Tour it. Own it</h1>
-                    <input type="search" className='search-bar' placeholder='Enter an address, city, or ZIP code'/>
+                    <SearchBar />
                 </div>
                     <img src={window.homeBanner} alt="home-banner"></img>
                     <br/>

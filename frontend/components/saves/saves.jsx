@@ -1,4 +1,6 @@
 import React from "react";
+import { FaHeart, FaRegHeart } from 'react-icons/Fa';
+
 
 class SavesIndex extends React.Component{
     constructor(props){
@@ -50,7 +52,6 @@ class SavesIndex extends React.Component{
                                     </div>
                                 </div>
                             </div>
-                        // </Link>
                     ))}
                 </div>
             </div>

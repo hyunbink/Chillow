@@ -13,11 +13,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/navBar_container';
 import Splash from './splash/splash'
 import ListingShowContainer from './listings/listing_show_container';
-import ListingIndexContainer from './search/search_container';
+import ListingIndexContainer from './listings/listings_index_container';
 import UpdateListingFormContainer from './listings/update_listing_form_container';
 import CreateListingFormContainer from './listings/create_listing_form_container';
 import Modal from './modal/modal'
 import SavesContainer from './saves/saves_container';
+import SearchResults from './search/search_results_container';
 
 const App = () => (
     <div>
@@ -31,6 +32,7 @@ const App = () => (
             <ProtectedRoute exact path="/listings/:listingId/edit" component={UpdateListingFormContainer} />
             <ProtectedRoute exact path="/listings/new" component={CreateListingFormContainer} />
             <ProtectedRoute exact path="/listings/saves" component={SavesContainer} />
+            <Route exact path="/listings/search/results" component={SearchResults} />
             <Route exact path="/listings" component={ListingIndexContainer} />
             <Route exact path="/" component={Splash} />
         </Switch>
