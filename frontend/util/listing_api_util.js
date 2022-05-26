@@ -27,7 +27,3 @@ export const deleteListing = listingId => $.ajax({
     method: 'DELETE'
 });
 
-export const savedListings = listingIds => $.ajax({
-    url: `/api/listings/savedListings`,
-    data: { listingIds }
-}); 

@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Save < ApplicationRecord
-    validates :user_id, :listing_id, presence: true
+    # validates :user_id, :listing_id, presence: true
     # validates_uniqueness_of :user_id, :scope => [:listing_id]
 
     belongs_to :user,

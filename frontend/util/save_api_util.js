@@ -13,3 +13,10 @@ export const deleteSave = (listingId) => {
         url: `/api/saves/${listingId}`
     });
 };
+
+export const showSaves = saves => {
+    return $.ajax({
+        url: `/api/saves`,
+        data: { saves }
+    })
+}

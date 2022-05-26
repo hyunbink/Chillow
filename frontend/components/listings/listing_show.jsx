@@ -7,7 +7,7 @@ class ListingShow extends React.Component{
     constructor(props){
         super(props);
         // this.state = props[this.props.listingId];
-        this.currentUserId = props.currentUserId
+        this.currentUserId = this.props.currentUserId
         // this.map = new google.maps.Map(this.mapNode, this.mapOptions);
     }
     
@@ -55,7 +55,8 @@ class ListingShow extends React.Component{
                         ))}
                         <div className={blurContainer}>
                             <img key={photoUrls.length} className={lastPhotoBlur} src={photoUrls[0]} alt="listing-photo"></img>
-                            <div className="blur-img-text" onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listingId})}>Click to Save</div>
+                            <div className="blur-img-text" 
+                            onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: this.props.listing.id})}>Click to Save</div>
                             {/* <button className="tour-button">Request a tour</button>   */}
                             {/* maybe have button show email and say 'email owner to request tour ??' */}
                         </div>
