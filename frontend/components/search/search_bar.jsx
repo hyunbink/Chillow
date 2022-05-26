@@ -1,4 +1,5 @@
 import React from "react";
+import { BiSearch } from 'react-icons/bi';
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -27,7 +28,7 @@ class SearchBar extends React.Component{
                 onChange={this.handleUpdate('query')}
                 value={this.state.query} 
                 placeholder='Enter an address, city, or ZIP code'/>
-                <input type='submit' />
+                <button id="search-button" >{<BiSearch />}</button>
             </form>
         )
     }
