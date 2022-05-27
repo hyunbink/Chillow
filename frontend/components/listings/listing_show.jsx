@@ -1,7 +1,7 @@
 import React from "react";
 import MarkerManager from "../../util/marker_manager";
 import { Link } from "react-router-dom";
-import { FaHeart, FaRegHeart } from 'react-icons/Fa';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 
 

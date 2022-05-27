@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHeart, FaRegHeart } from 'react-icons/Fa';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 
 class SavesIndex extends React.Component{
