@@ -64,8 +64,14 @@
     padding-right: 14px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    align-self: center;
+    justify-content: center;
+    padding-top: 14px;
     color: rgb(39, 39, 39);
-
+    height: 30px;
+    &:active{
+        box-shadow: 0 0 0px 1px #fff, 0 0 2px 3px #a6e5ff, 0 0 2px 4px #006aff;
+    }
 }
 
 .nav-mid{
@@ -73,11 +79,15 @@
     justify-content: center;
     align-items: center;
     width: 33%;
+    cursor: default;
 }
 
 .nav-mid img{
     border-radius: 10px;
-    max-height: 80px;
+    max-height: 70px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .nav-right{
@@ -96,30 +106,39 @@
 }
 
 a#login:hover{
-    color: rgba(85,179,243,255);
+    color: rgba(0,106,255,255);
 }
 
 #signup:hover{
-    color: rgba(85,179,243,255);
+    color: rgba(0,106,255,255);
 }
 
 #logout:hover{
-    color: rgba(85,179,243,255);
+    color: rgba(0,106,255,255);
 }
 
 .nav-left-link:hover{
-    color: rgba(85,179,243,255);
+    color: rgba(0,106,255,255);
 }
 
 #user-symbol{
     height: 16px;
-    color: rgba(85,179,243,255);
+    color: rgba(0,106,255,255);
 }
 
-#logged-in-user:hover{
-    color: rgba(85,179,243,255);
-    cursor: pointer;
+.href-logo{
+    height: 30px;
+    width: 30px;
+    color: rgb(39, 39, 39);
+    &:hover{
+        color: rgba(0,106,255,255);
+    }
+    &:active{
+        color: darkblue;
+    }
 }
+
+
 
 
 
