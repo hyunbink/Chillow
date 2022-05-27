@@ -19,10 +19,6 @@ const usersReducer = (state = {}, action) => {
             const idx = newState[action.save.user_id].userSaves.findIndex((ele)=> ele === action.save.listing_id);
             newState[action.save.user_id].userSaves.splice(idx, 1);
             return newState;
-        case REMOVE_LISTING:
-            const removeId = newState[action.save.user_id].userSaves.findIndex((ele)=> ele === action.save.listing_id);
-            newState[action.save.user_id].userSaves.splice(removeId, 1);
-            return newState;
         default:
             return state;
     }

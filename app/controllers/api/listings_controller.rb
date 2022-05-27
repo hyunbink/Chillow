@@ -33,6 +33,7 @@ class Api::ListingsController < ApplicationController
         @listing = Listing.find_by(id: params[:id])
         if @listing.owner_id == current_user.id
             if @listing.destroy
+                @listings = Listing.all
                 render :index
             else
                 render json: @listing.errors.full_messages, status: 422
