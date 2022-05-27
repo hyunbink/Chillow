@@ -5,9 +5,9 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-const receiveCurrentUser = currentUser => ({
+const receiveCurrentUser = payload => ({
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    payload
 });
 
 const logoutCurrentUser = () => ({
@@ -25,19 +25,22 @@ export const clearErrors = () => ({
 
 export const signup = user => dispatch => (
     APIUtil.signup(user)
-        .then(user => (dispatch(receiveCurrentUser(user))), 
+        .then(payload => (dispatch(receiveCurrentUser(payload))), 
     err => (dispatch(receiveErrors(err.responseJSON))))
 );
+// payload coming from jbuilder template, holding user, listings, saves
 
 export const login = user => dispatch => (
     APIUtil.login(user)
-        .then(user => (dispatch(receiveCurrentUser(user))), 
+        .then(payload => (dispatch(receiveCurrentUser(payload))), 
     err => (dispatch(receiveErrors(err.responseJSON))))
 );
 
 export const logout = () => dispatch => (
     APIUtil.logout()
-        .then(user => (dispatch(logoutCurrentUser())))
+        .then(() => (dispatch(logoutCurrentUser())))
 );
+
+
 
 

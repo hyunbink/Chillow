@@ -1,0 +1,545 @@
+// Place all the styles related to the api/listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (
+    
+
+.listing-div{
+    display: flex;
+    height: 100vh;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.listing-price{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.listing-physical-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.index-listing-char-info{
+    padding-bottom: 8px;
+}
+
+.listing-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.listing-address {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.listing-physical-div{
+    margin-bottom: 8px;
+}
+
+.listing-address-div{
+    margin-bottom: 8px;
+}
+
+.listing-price-div{
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.listing-photos{
+    width: 50%;
+    height: 25%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+}
+
+#listing-photo-0{
+    width: 100%;
+    height: 50%;
+}
+
+.listing-div-left{
+    width: 75%;
+    overflow-y: scroll;
+    padding-left: 5px;
+}
+
+.listing-div-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    // justify-content: ;
+}
+
+.listing-nav-header{
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    // margin-top: 2px;
+    border-bottom: .5px solid grey;
+}
+
+
+
+#heart{
+    color: rgba(0,106,255,255);
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 24px;
+    font-size: 24px;
+}
+
+.listings-mini-map{
+    // overflow-y: scroll;
+    width: 100%;
+    height: 50%;
+    padding-top: 10px;
+}
+
+// #mini-map{
+//     box-sizing: border-box;
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 8px;
+//     border: 10px;
+//     padding: 10px;
+// }
+
+#show-map{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.show-edit-link-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+    flex-direction: column;
+}
+
+.show-edit-link{
+    text-decoration: none;
+    // color: white;
+    // background-color: rgba(0,106,255,255);
+    // padding: 5px;
+    // align-self: center;
+    background-color: rgb(0, 106, 255);
+    border-color: rgb(0, 106, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 9px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    // margin-top: 5%;
+    margin-bottom: 4%;
+    height: 30px;
+    width: 80%;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(13, 69, 153);
+        border-color: rgb(13, 69, 153);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+    &:active{
+        background-color: rgb(14, 52, 109);
+    }
+}
+
+// .show-edit-link:hover{
+    
+// }
+
+
+
+
+//index-listings
+
+.main-index-div{
+    display: flex;
+    height: calc(100vh -  80px);
+    width: calc()
+}
+
+.index-div-right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // border: 5px solid purple;
+    box-sizing: border-box;
+}
+
+.index-all-listings{
+    box-sizing: border-box;
+    padding: 8px;
+    // border: solid 3px green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.right-half{
+    overflow-y: scroll;
+    width: 100%;
+    padding-left: 3px;
+    box-shadow: -3px 1px 4px rgba(33, 33, 40, .5);
+    z-index: 1;
+}
+
+.left-half{
+    width: 100%;
+}
+
+#main-map{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 10px;
+    padding: 10px;
+}
+
+.index-listing-photos{
+    height: 180px;
+    width: 100%;
+    position: relative;
+    
+}
+
+
+.index-listing{
+    box-sizing: border-box;
+    // border: 5px solid red;
+    
+    border-bottom: solid 3px rgba(0,106,254,255);
+    box-shadow: 0px 1px 4px rgb(33, 33, 40);
+    // padding: 3px;
+    margin: 3px;
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: all 300ms ;
+    &:hover{
+        transform: scale(1.02) translate(0px, -8px);
+        box-shadow: 0px 3px 6px black;
+        
+
+    }
+}
+
+.index-listing-photo-div{
+    width: 100%;
+    height: 100%;
+    // border: 5px solid blue;
+    position: relative;
+    object-fit: cover;
+}
+
+.index-listing-info{
+    padding-left: 11px;
+    
+}
+
+#filled-heart{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: auto;
+    width: 8%;
+    color: white;
+}
+
+#empty-heart{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: auto;
+    width: 8%;
+    color: white;
+}
+
+.last-photo-blur-odd{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+    filter: blur(8px);
+}
+
+.last-photo-blur-even{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+    filter: blur(8px);
+}
+
+.blur-container-even{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    display: inline-flex;
+}
+
+.blur-container-odd{
+    width: 100%;
+    height: 25%;
+    position: relative;
+    display: inline-flex;
+}
+
+.blur-img-text{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+// .tour-button{
+//     background-color: rgba(0,106,255,255);
+//     position: absolute;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//     color: white;
+// }
+
+
+// listings forms
+.form-div-container{
+    height: calc(100vh -  80px);
+    overflow-y: hidden;
+}
+
+.form-div-listing{
+    display: flex;
+    width: calc();
+    height: calc(100vh - 80px);
+    background-color: white;
+    // border: 3px solid red;
+}
+
+.form-div-left{
+    width: 100%;
+    // height: 100%;
+    // border: 3px solid blue ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: dashed 3px rgb(0, 106, 255);
+    overflow-y: auto;
+}
+
+.form-div-right{
+    width: 100%;
+    // height: 100%;
+    overflow-y: scroll;
+    // border: solid 3px green;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-photo-div{
+    width: 75%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.form-photo-drop-zone{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: dashed 3px rgb(0, 106, 255);
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    &:hover{
+        background-color: rgb(0, 106, 255);
+        color: white;
+    }
+}
+
+#form-photo-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-photo-preview{
+    border: solid 1px white;
+    width: 45%;
+    // height: 25%;
+}
+
+.form-photos-new-prev{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-input-label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-input{
+    background-color: rgba(246,246,246,255);
+    border: 1px solid rgba(216,213,213,255);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 13px 0px 13px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    &:hover{
+        border: 1px solid rgb(0, 106, 255);
+    }
+}
+
+#wide-input{
+    width: 70%;
+}
+
+.form-input-div{
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &:hover{
+        font-weight: 700;
+        font-size: 16px;
+        color: rgb(0, 106, 255);
+    }
+}
+
+#short-input{
+    width: 50%;
+}
+
+
+.form-smaller-inputs{
+    // border: solid 3px purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.form-coord-inputs{
+    // border: solid 3px purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.form-map-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    &:hover{
+        .form-coord-inputs{
+            font-weight: 700;
+            font-size: 16px;
+            color: rgb(0, 106, 255);
+            .form-input{
+                border: 1px solid rgb(0, 106, 255);
+
+            }
+        }
+        h1{
+            font-weight: 700;
+            font-size: 16px;
+            color: rgb(0, 106, 255);
+        }
+    }
+}
+
+.form-map-container{
+    width: 500px;
+	height: 500px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#form-map{
+	width: 100%;
+	height: 100%;
+    border-radius: 5px;
+}
+
+.form-input-button-div{
+    display: flex;
+}
+
+.form-submit{
+    background-color: rgb(0, 106, 255);
+    border-color: rgb(0, 106, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 9px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    // margin-top: 5%;
+    margin-bottom: 5%;
+    height: 45px;
+    width: 33%;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(13, 69, 153);
+        border-color: rgb(13, 69, 153);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+    &:active{
+        background-color: rgb(14, 52, 109);
+    }
+}
+

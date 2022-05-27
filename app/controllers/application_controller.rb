@@ -32,4 +32,8 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def saved_listings
+        Save.where(user_id: current_user.id)
+    end
+
 end

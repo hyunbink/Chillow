@@ -19,7 +19,6 @@ class SessionForm extends React.Component {
 
     componentDidMount(){
         this.props.clearErrors();
-        // console.log(this.props)
     }
     
 
@@ -53,7 +52,7 @@ class SessionForm extends React.Component {
             <div className='form-div'>
                 <div className='login-form-container'>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
-                        <h3 id='page-greeting' >Welcome to Chillow</h3>
+                        <h3 id='page-nav-bar' >Welcome to Chillow</h3>
                         {this.props.formType === 'login' ? 
                         <h1 id='form-title'>Log In</h1> : <h1 id='form-title'>Sign Up</h1>}
                         <ul className='errors'>
@@ -61,14 +60,14 @@ class SessionForm extends React.Component {
                         </ul>
                         <div className='login-form'>
                             <br/>
-                                <input id='login-inputs'
+                                <input 
                                     type="text" 
                                     value={this.state.email}
                                     onChange={this.update('email')}
                                     className="login-input" 
                                     placeholder='Email'/>
                             <br/>
-                                <input id='login-inputs'
+                                <input 
                                     type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
@@ -83,7 +82,7 @@ class SessionForm extends React.Component {
                     <br/>
                 </div>
                 <div className='img-holder'>
-                    <img src={window.heroBanner}></img>
+                    <img src={window.heroBanner} alt='hero-banner'></img>
                 </div>
             </div>
         );

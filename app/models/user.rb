@@ -16,6 +16,21 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
+    has_many :saves,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Save
+
+    has_many :saved_listings,
+        through: :saves,
+        source: :listing
+
+    has_many :listings,
+        primary_key: :id,
+        foreign_key: :owner_id,
+        class_name: :Listing
+
+
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(email, password)
