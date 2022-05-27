@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchAllListings } from '../../actions/listing_actions';
+import { fetchAllListings, deleteListing } from '../../actions/listing_actions';
 import { withRouter, Link } from 'react-router-dom';
 import ListingsIndex from '../listings/listings_index';
 import { openModal, closeModal } from '../../actions/modal_actions';
@@ -27,7 +27,8 @@ const mDTP = dispatch => ({
     fetchAllListings: () => dispatch(fetchAllListings()),
     openModal: (modal, listingId) => dispatch(openModal(modal, listingId)),
     deleteSave: save => dispatch(deleteSave(save)),
-    createSave: save => dispatch(createSave(save))
+    createSave: save => dispatch(createSave(save)),
+    deleteListing: listingId => dispatch(deleteListing(listingId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(ListingsIndex));

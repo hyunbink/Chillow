@@ -31,10 +31,14 @@ class Api::ListingsController < ApplicationController
 
     def destroy
         @listing = Listing.find_by(id: params[:id])
-        if @listing.destroy
-            render :index
+        if @listing.owner_id == current_user.id
+            if @listing.destroy
+                render :index
+            else
+                render json: @listing.errors.full_messages, status: 422
+            end
         else
-            render json: @listing.errors.full_messages, status: 422
+            render json: ['could not delete'], status: 422
         end
     end
 
