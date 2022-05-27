@@ -16,6 +16,8 @@ const NavBar = ({ currentUser, logout }) => {
                 <img src={window.logo} alt="chillow-logo"></img>
             </Link>
             <div className='nav-right'>
+            <a className='nav-left-link' href='https://github.com/hyunbink/Chillow' >Github</a>
+            <a className='nav-left-link' href='https://www.linkedin.com/in/matia-kim/' >LinkedIn</a>
             <Link id='login' to="/login" >Login</Link>
             <Link id='signup' to="/signup">Sign up</Link>
             </div>
