@@ -30,7 +30,8 @@ class Listing < ApplicationRecord
     has_many :saves,
         primary_key: :id,
         foreign_key: :listing_id,
-        class_name: :Save
+        class_name: :Save,
+        dependent: :destroy
 
     belongs_to :owner,
         primary_key: :id,

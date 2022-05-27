@@ -8,12 +8,17 @@ import { createSave, deleteSave } from '../../actions/save_actions';
 
 
 const mSTP = (state, ownProps) => {
-    console.log("almost got it", state)
+    // console.log("almost got it", state);
+    // if (state.entities.users[state.session.id]) {
+    //     let userSaves = state.entities.users[state.session.id].userSaves;
+    // } else { let userSaves = null}
+
+    let userSaves = state.entities.users[state.session.id] ?  state.entities.users[state.session.id].userSaves : null;
     return({
         listings: state.entities.listings,
         saves: Object.entries(state.entities.saves),
         currentUserId: state.session.id,
-        userSaves: state.entities.users[state.session.id].userSaves
+        userSaves: userSaves
     })
 };
 

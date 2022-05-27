@@ -29,6 +29,15 @@ class Api::ListingsController < ApplicationController
         end
     end
 
+    def destroy
+        @listing = Listing.find_by(id: params[:id])
+        if @listing.destroy
+            render :index
+        else
+            render json: @listing.errors.full_messages, status: 422
+        end
+    end
+
     def search
         query = params[:query]
         @listings = Listing.where('street ILIKE ? OR city ILIKE ? ', "%#{query}%", "%#{query}%")   # will be array zip_code uses int, google how to do
