@@ -3,7 +3,7 @@ import ListingsIndexItems from './listing_index_items';
 import ListingMap from "../listings_map/listings_map";
 
 
-export default({ listings, fetchAllListings, openModal, deleteSave, createSave, saves }) => (
+export default({ listings, fetchAllListings, openModal, deleteSave, createSave, saves, userSaves }) => (
     <div className="main-index-div">
         <div className="left-half" >
                 <ListingMap
@@ -19,6 +19,7 @@ export default({ listings, fetchAllListings, openModal, deleteSave, createSave, 
                 listings={listings} 
                 fetchAllListings={fetchAllListings}
                 saves={saves}
+                userSaves={userSaves}
                 />
         </div>
 

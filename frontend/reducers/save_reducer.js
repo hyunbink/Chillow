@@ -11,6 +11,7 @@ const saveReducer = (state = {}, action) => {
             // return Object.assign({}, state, action.saves)
         case DESTROY_SAVE:
             let nxtState = Object.assign({}, state);
+            console.log('in tha reduca', action.save)
             delete nxtState[action.save.id];
             return nxtState;
         case RECEIVE_CURRENT_USER:
