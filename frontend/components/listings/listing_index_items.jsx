@@ -49,7 +49,7 @@ class ListingIndex extends React.Component{
 
             });
         }  
-        console.log('EEEEEE', this.saved)
+        // console.log('EEEEEE', this.saved)
         // if (this.saved) {
         //     this.saved.forEach(element => {
         //         console.log('saved-ele', element);
@@ -62,7 +62,7 @@ class ListingIndex extends React.Component{
     render(){
         if (!this.props.listings) return null;
         let listingsArr = Object.values(this.props.listings)
-        console.log('listingsArr', listingsArr[0])
+        // console.log('listingsArr', listingsArr[0])
         return(
             <div className="index-div-right">
                 <div key='listings' className="index-all-listings">

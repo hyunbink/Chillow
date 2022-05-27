@@ -226,7 +226,7 @@
     top: 40px;
     right: 0px;
     z-index: 50;
-    height: 200px;
+    height: 196px;
     width: 220px;
     border-radius: 3px;
     display: flex;
@@ -243,6 +243,8 @@
             box-shadow: 3px 2px 1px 1px rgba(0, 0, 0, .08);
             background-color: rgba(0,106,255,255);
             color: white;
+        border-radius: 3px;
+
         }
     }
 }
@@ -256,6 +258,8 @@
         cursor: default;
         display: block;
         align-items: center;
+    border-radius: 3px;
+
     }
 }
 

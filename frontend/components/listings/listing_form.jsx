@@ -92,13 +92,11 @@ class ListingForm extends React.Component {
     // }
 
     previewNewPhotos(){
-        console.log('preview-state-newPhoto', this.state.photoFiles);
         return this.state.photoFiles ? 
         this.state.photoFiles.map((photo, i) => <img className='form-photo-preview' key={i} src={URL.createObjectURL(photo[0])} alt='chosen-photo-file'></img>) : 
         null
     }
     previewCurrentPhotos(){
-        console.log('preview-state', this.state);
         return this.state.photoUrls ? this.state.photoUrls.map((photo, j) => <img className='form-photo-preview' key={j} src={photo} alt='listings-photos'></img>) : 
         null
     }

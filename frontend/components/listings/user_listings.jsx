@@ -13,10 +13,8 @@ class UserListings extends React.Component{
     render(){
         if (!this.props.listings) return null;
         let allListings = Object.values(this.props.listings)
-        console.log('allListings', listingsArr)
         let listingsArr = [];
         allListings.forEach(element => {
-            console.log('element', element.owner_id);
             element.owner_id === this.props.currentUserId ? listingsArr.push(element) : null
         });
         return(

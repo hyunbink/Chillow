@@ -3,18 +3,7 @@ import React from "react";
 class SearchResults extends React.Component{
     constructor(props){
         super(props);
-        console.log('listings', this.props.listings)
-
     };
-
-    componentDidMount(){
-        let that = this;
-        if (this.props.saves) {
-            this.props.saves.forEach(element => {
-                // that.props.fetchListing(element[1].listing_id);
-            });
-        }        
-    }
 
     render(){
         if (!this.props.listings) return null;

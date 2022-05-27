@@ -5,19 +5,13 @@ import { FaHeart, FaRegHeart } from 'react-icons/Fa';
 class SavesIndex extends React.Component{
     constructor(props){
         super(props);
+        this.state = props.listings
     };
 
-    componentDidMount(){
-        let that = this;
-        if (this.props.saves) {
-            this.props.saves.forEach(element => {
-                that.props.fetchListing(element[1].listing_id);
-            });
-        }        
-    }
+    
 
     render(){
-        if (!this.props.listings) return null;
+        // if (this.props.listings > this.props.saves) return null;
         let listingsArr = Object.values(this.props.listings)
         return(
             <div className="alt-main-div">

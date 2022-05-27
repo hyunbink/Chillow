@@ -106,7 +106,6 @@ class ListingShow extends React.Component{
                         {owner_id === this.currentUserId ? 
                         <div className="show-edit-link-container">
                             <Link className='show-edit-link' onClick={this.props.closeModal} to={`/listings/${id}/edit`}>Edit your listing</Link>
-                            <br/>
                             <Link className='show-edit-link' onClick={this.deleteListing(id)} to={'/listings'} >Remove your listing</Link>
                         </div> : 
                         null}
