@@ -83,10 +83,12 @@
 }
 
 .nav-mid img{
-    border-radius: 10px;
-    max-height: 70px;
+    max-height: 65px;
     &:hover{
         cursor: pointer;
+    }
+    &:active{
+        box-shadow: 0 0 0px 1px #fff, 0 0 2px 3px #a6e5ff, 0 0 2px 4px #006aff;
     }
 }
 

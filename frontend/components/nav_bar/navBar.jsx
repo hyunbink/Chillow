@@ -36,7 +36,6 @@ const NavBar = ({ currentUser, logout }) => {
             <a className='nav-left-link' href='https://github.com/hyunbink/Chillow' >Github</a>
             <a className='nav-left-link' href='https://www.linkedin.com/in/matia-kim/' >LinkedIn</a>
             <span id='logged-in-user'>
-                {/* <FaUserCircle id='href-logo'/> */}
                     <div className='nav-left-link'>{currentUser.email}</div>
                 <div className="drop-down-box">
                     <div className='drop-down-saves-link'><Link to={`/listings/saves`}>Saved Listings</Link></div>
@@ -47,12 +46,13 @@ const NavBar = ({ currentUser, logout }) => {
             </div>
         </nav>
     );
-
+    
     return currentUser ? personalNavBar() : sessionLinks();
-
+    
 };
 
 export default NavBar;
 
 {/* <BsGithub className='href-logo'/>
 <BsLinkedin className='href-logo'/> */}
+{/* <FaUserCircle id='href-logo'/> */}
