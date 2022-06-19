@@ -5,7 +5,8 @@ import {
     Redirect,
     Switch,
     Link,
-    HashRouter
+    HashRouter,
+    
 } from 'react-router-dom';
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -37,6 +38,7 @@ const App = () => (
             <Route exact path="/listings/search/results" component={SearchResults} />
             <Route exact path="/listings" component={ListingIndexContainer} />
             <Route exact path="/" component={Splash} />
+            <Route path="/" component={Splash} />
         </Switch>
     </div>
 );
