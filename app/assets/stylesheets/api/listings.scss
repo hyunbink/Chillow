@@ -543,3 +543,18 @@
     }
 }
 
+
+.list-err-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-errs{
+    color: red;
+    margin-block: .3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    text-align: center;
+}
+

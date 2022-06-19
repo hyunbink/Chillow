@@ -12,7 +12,7 @@ componentDidMount(){
 }
 
 render() {
-    const { action, formType, listing, openModal, history } = this.props;
+    const { action, formType, listing, openModal, history, errors } = this.props;
 
 
     if (!listing) return null;
@@ -22,16 +22,19 @@ render() {
             formType={formType}
             listing={listing}
             openModal={openModal} 
-            history={history}/>
+            history={history}
+            errors={errors}/>
         );
     };  
 
 };
 
 const mSTP = (state, ownProps) => {
+    console.log('update errs state', state)
     return({
         listing: state.entities.listings[ownProps.match.params.listingId],
-        formType: 'Update Listing'
+        formType: 'Update Listing',
+        errors: state.errors.listingErrors
     });
 };
 
