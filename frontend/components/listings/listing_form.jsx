@@ -8,6 +8,7 @@ class ListingForm extends React.Component {
         this.state = props.listing;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
         this.mapHeader = ""
     }
     
@@ -83,13 +84,16 @@ class ListingForm extends React.Component {
                 this.props.history.push(`/listings`);
                 this.props.openModal('show', action.listing.id);
             });
-        }
-        
+        }        
     }
 
-    // handleInputValues(){
-        // input value corrections in here
-    // }
+    renderErrors(){
+        return <div>
+            {this.props.errors.map((err, i) => 
+                <p className="list-errs" key={`list-err-${i}`}>{err}</p>
+            )}
+        </div>
+    }
 
     previewNewPhotos(){
         return this.state.photoFiles ? 
@@ -103,6 +107,7 @@ class ListingForm extends React.Component {
 
     render(){
         const { street, city, zip_code, state, latitude, longitude, sqft, beds, baths, price, photoUrls } = this.state;
+        console.log("in the form props", this.props.errors)
         return(
             <div className="form-div-container">
                 <form className="form-div-listing" onSubmit={this.handleSubmit}>
@@ -211,6 +216,7 @@ class ListingForm extends React.Component {
                             </div>
                         </div>
                         <div>
+                            {this.props.errors.length > 0 ? <div className="list-err-wrapper">{this.renderErrors()}</div> : <div></div>}
                             <div className="form-input-div">
                                 <input className="form-submit" type='submit' value={this.props.formType} />
                             </div>

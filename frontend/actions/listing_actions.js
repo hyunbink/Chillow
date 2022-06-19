@@ -43,12 +43,14 @@ export const fetchListing = listingId => dispatch => {
 
 export const createListing = listing => dispatch => {
     return ListingAPIUtil.createListing(listing)
-        .then(listing => dispatch(receiveListing(listing)))
+        .then(listing => dispatch(receiveListing(listing)),
+        (err) => dispatch(receiveErrors(err.responseJSON)))
 }
 
 export const updateListing = (listing, id) => dispatch => {
     return ListingAPIUtil.updateListing(listing, id)
-        .then(listing => dispatch(receiveListing(listing)))
+        .then(listing => dispatch(receiveListing(listing)),
+        (err) => dispatch(receiveErrors(err.responseJSON)))
 }
 
 export const deleteListing = listingId => dispatch => {
