@@ -9,6 +9,7 @@ export default({ listings, fetchAllListings, openModal, deleteSave, createSave, 
                 <ListingMap
                 listings={listings}
                 openModal={openModal}
+                saves={userSaves}
                 />
         </div>
 

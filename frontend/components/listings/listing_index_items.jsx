@@ -9,6 +9,20 @@ class ListingIndex extends React.Component{
         super(props);
         this.saved = [];
         this.savedObj = {};
+        this.mapIconHover = this.mapIconHover.bind(this);
+        this.hover = ''
+    }
+
+    mapIconHover(id, status){
+        // document.getElementsByClassName(".index-listing",)
+        if (status === 'enter') {
+            console.log("grabbing by id", document.getElementById(`index-listing-item-${id}`))
+            console.log("in hover", this.props.listings[id])
+            this.setState({hover: '456'})
+        } else {
+            console.log('id', id)
+            console.log("exit", this.hover)
+        }
     }
     
     componentDidMount(){
@@ -49,13 +63,6 @@ class ListingIndex extends React.Component{
 
             });
         }  
-        // console.log('EEEEEE', this.saved)
-        // if (this.saved) {
-        //     this.saved.forEach(element => {
-        //         console.log('saved-ele', element);
-
-        //     });
-        // }
     }
 
 //  can't like via index, need to change z-index? not rendering empty heart after dislike, cause Im not taking out saveIds in arr
@@ -67,7 +74,11 @@ class ListingIndex extends React.Component{
             <div className="index-div-right">
                 <div key='listings' className="index-all-listings">
                     {listingsArr.map((listing,j)=>(
-                            <div key={j} className="index-listing" onClick={()=>this.props.openModal('show',  listing.id)} >
+                            <div key={j} id={`index-listing-item-${listing.id}`} 
+                            onMouseEnter={() => this.mapIconHover(listing.id, 'enter')} 
+                            onMouseLeave={() => this.mapIconHover(listing.id, 'leave')}
+                            className="index-listing" 
+                            onClick={()=>this.props.openModal('show',  listing.id)} >
                                 <div className="index-listing-photo-div">
                                     <img className="index-listing-photos" 
                                     src={listing.photoUrls[0]} 

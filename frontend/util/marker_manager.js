@@ -1,11 +1,11 @@
 class MarkerManager {
-    constructor(map, handleClick, icon){
+    constructor(map, handleClick, saves){
         this.map = map;
         this.handleClick = handleClick;
         this.markers = [];
-        this.icon = icon
-        this.icon2 = icon
-
+        this.icon = null;
+        this.icon2 = null;
+        this.saves = saves;
     }
     
     
@@ -26,7 +26,6 @@ class MarkerManager {
     createMarkerFromListing(listing) {
         this.clearMarkers();
         const position = new google.maps.LatLng(listing.latitude, listing.longitude);
-        
         // for display hover window over marker
         const contentListingInfo = `<div style="display: flex; justify-content: space-between;">
         <div>
@@ -48,22 +47,43 @@ class MarkerManager {
             this.props.openModal('show',  listing.id)    // get this to render modal
         };
         
+        
+        let that = this
+        if (this.saves.includes(listing.id)) {
+            that.icon = {
+                url: "https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
+            };
+
+        } else {
+            that.icon = {
+                url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            };
+            that.icon2 = {
+                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            };
+        }
+        
         const mouseOver = () => {
-            marker.infoWindow.open(this.map, marker);
-            marker.setIcon(this.icon2);
+            this.icon2 = {
+                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            };
+            marker.infoWindow.open(that.map, marker);
+            marker.setIcon(that.icon2);
         };
         
         const mouseOut = () => {
-            marker.infoWindow.close(this.map, marker);
-            marker.setIcon(this.icon);
-        };
-        
-        
-        this.icon = {
-            url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-        };
-        this.icon2 = {
-            url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            let that = this
+            if (this.saves.includes(listing.id)) {
+                that.icon = {
+                    url: "https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
+                };
+            } else {
+                that.icon = {
+                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                };
+            }
+            marker.infoWindow.close(that.map, marker);
+            marker.setIcon(that.icon);
         };
         
         const marker = new google.maps.Marker({
@@ -89,7 +109,7 @@ class MarkerManager {
         const mouseOut = () => {
             marker.setIcon(this.icon);
         };
-        
+
         this.icon = {
             url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
         };
