@@ -1,10 +1,8 @@
-# Chillow
-
 <p align="center">
-  <img width="180" height="70" src="https://github.com/hyunbink/Chillow/blob/main/app/assets/images/logo.png">
+  <img width="180" alt="Chillow-logo" height="70" src="https://github.com/hyunbink/Chillow/blob/main/app/assets/images/logo.png">
 </p>
 
-Chillow is a full stack clone of real estate marketplace Zillow built with React, Redux, Ruby on Rails, Javascript, PostgreSQL, AWS, Google Maps API, and SCSS. Chillow allows users to upload, search, and save listings with an immersive photo experience.
+[Chillow(Live Site)](https://Chillow.herokuapp.com/#/) is a full stack clone of real estate marketplace Zillow built with React, Redux, Ruby on Rails, Javascript, PostgreSQL, AWS, Google Maps API, and SCSS. Chillow allows users to upload, search, and save listings with an immersive photo experience.
 
 Things you may want to cover:
 
