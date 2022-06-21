@@ -61,8 +61,7 @@ class ListingIndex extends React.Component{
                 // console.log('savedArr', that.saved);
                 that.savedObj = {[eleList]: element[0] };
                 // console.log('savedObj', that.savedObj);
-
-
+                // 
             });
         }  
     }
