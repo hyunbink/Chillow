@@ -10,24 +10,26 @@ class ListingIndex extends React.Component{
         this.saved = [];
         this.savedObj = {};
         this.mapIconHover = this.mapIconHover.bind(this);
-        this.hover = ''
+        this.hover = '';
     }
 
     mapIconHover(id, status){
         // document.getElementsByClassName(".index-listing",)
-        if (status === 'enter') {
-            console.log("grabbing by id", document.getElementById(`index-listing-item-${id}`))
-            console.log("in hover", this.props.listings[id])
-            this.setState({hover: '456'})
-        } else {
-            console.log('id', id)
-            console.log("exit", this.hover)
-        }
+        // if (status === 'enter') {
+        //     console.log("grabbing by id", document.getElementById(`index-listing-item-${id}`))
+        //     console.log("in hover", this.props.listings[id])
+        //     this.setState({hover: '456'})
+        // } else {
+        //     console.log('id', id)
+        //     console.log("exit", this.hover)
+        // }
     }
     
     componentDidMount(){
-        this.props.fetchAllListings()
         let that = this;
+        if (!this.props.fromSearchListings) {
+            that.props.fetchAllListings()
+        }
         this.saved = [];
         if (this.props.saves) {
             this.props.saves.forEach(element => {
@@ -84,7 +86,12 @@ class ListingIndex extends React.Component{
                                     src={listing.photoUrls[0]} 
                                     alt="listing main photo">
                                     </img>
-                                    {this.saved.includes(listing.id) ? <FaHeart id="filled-heart" onClick={()=>this.props.deleteSave(this.savedObj[listing.id]) } /> : <FaRegHeart id="empty-heart" onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: listing.id})} />}
+                                    {this.props.fromUserListings ? <div></div> : this.saved.includes(listing.id) ? 
+                                        <FaHeart id="filled-heart" 
+                                        onClick={()=>this.props.deleteSave(this.savedObj[listing.id]) } /> : 
+                                        <FaRegHeart id="empty-heart" 
+                                        onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: listing.id})} 
+                                    />} 
                                 </div>
                                 <div className="index-listing-info">
                                     <div className="listing-price-div">

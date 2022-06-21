@@ -45,11 +45,11 @@ class Api::ListingsController < ApplicationController
 
     def search
         query = params[:query]
-        @listings = Listing.where('street ILIKE ? OR city ILIKE ? ', "%#{query}%", "%#{query}%")   # will be array zip_code uses int, google how to do
+        @listings = Listing.where('street ILIKE ? OR city ILIKE ? ', "%#{query}%", "%#{query}%") 
         if @listings.length > 0
             render :index
         else
-            render json: ["no results found for #{query}"], status: 404
+            render json: ["No results found for '#{query}'"], status: 404
         end
     end
 

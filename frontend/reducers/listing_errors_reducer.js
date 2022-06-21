@@ -20,7 +20,6 @@ const listingErrorsReducer = (state = [], action) => {
         case CLEAR_ERRORS:
             return [];
         case RECEIVE_ERRORS:
-            console.log("in errors reduc", action.errors);
             return action.errors;
         case CLEAR_ERRORS:
             return [];

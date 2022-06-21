@@ -203,7 +203,7 @@ class ListingForm extends React.Component {
                                         Latitude:
                                     </label>
                                         <br/>
-                                    <input placeholder="read-only" className="form-input" type='text' value={latitude} onChange={this.update('latitude')} readOnly={true}/>
+                                    <input placeholder="Place pin on map" className="form-input" type='text' value={latitude} onChange={this.update('latitude')} readOnly={true}/>
                                 </div>
 
                                 <div className="form-input-div">
@@ -211,7 +211,7 @@ class ListingForm extends React.Component {
                                         Longitude:
                                     </label>
                                         <br/>
-                                    <input placeholder="read-only" className="form-input" type='text' value={longitude} onChange={this.update('longitude')} readOnly={true}/>
+                                    <input placeholder="Place pin on map" className="form-input" type='text' value={longitude} onChange={this.update('longitude')} readOnly={true}/>
                                 </div>
                             </div>
                         </div>
