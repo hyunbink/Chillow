@@ -1,0 +1,225 @@
+// Place all the styles related to the api::users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list-err-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-errs{
+    color: red;
+    margin-block: .3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    text-align: center;
+}
+
+.form-submit{
+    background-color: rgb(0, 106, 255);
+    border-color: rgb(0, 106, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 9px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    // margin-top: 5%;
+    margin-bottom: 5%;
+    height: 45px;
+    width: 33%;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(13, 69, 153);
+        border-color: rgb(13, 69, 153);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+    &:active{
+        background-color: rgb(14, 52, 109);
+    }
+}
+
+.form-div-container{
+    height: calc(100vh -  80px);
+    overflow-y: hidden;
+}
+
+.form-div-listing{
+    display: flex;
+    width: calc();
+    height: calc(100vh - 80px);
+    background-color: white;
+    // border: 3px solid red;
+}
+
+.form-div-left{
+    width: 100%;
+    // height: 100%;
+    // border: 3px solid blue ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: dashed 3px rgb(0, 106, 255);
+    overflow-y: auto;
+}
+
+.form-div-right{
+    width: 100%;
+    // height: 100%;
+    overflow-y: scroll;
+    // border: solid 3px green;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-photo-div{
+    width: 75%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.form-photo-drop-zone{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: dashed 3px rgb(0, 106, 255);
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    &:hover{
+        background-color: rgb(0, 106, 255);
+        color: white;
+    }
+}
+
+#form-photo-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-photo-preview{
+    border: solid 1px white;
+    width: 45%;
+    // height: 25%;
+}
+
+.form-photos-new-prev{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-input-label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-input{
+    background-color: rgba(246,246,246,255);
+    border: 1px solid rgba(216,213,213,255);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 13px 0px 13px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    &:hover{
+        border: 1px solid rgb(0, 106, 255);
+    }
+}
+
+#wide-input{
+    width: 70%;
+}
+
+.form-input-div{
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &:hover{
+        font-weight: 700;
+        font-size: 16px;
+        color: rgb(0, 106, 255);
+    }
+}
+
+#short-input{
+    width: 50%;
+}
+
+
+.form-smaller-inputs{
+    // border: solid 3px purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.form-coord-inputs{
+    // border: solid 3px purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.form-map-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    &:hover{
+        .form-coord-inputs{
+            font-weight: 700;
+            font-size: 16px;
+            color: rgb(0, 106, 255);
+            .form-input{
+                border: 1px solid rgb(0, 106, 255);
+
+            }
+        }
+        h1{
+            font-weight: 700;
+            font-size: 16px;
+            color: rgb(0, 106, 255);
+        }
+    }
+}
+
+.form-map-container{
+    width: 500px;
+	height: 500px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#form-map{
+	width: 100%;
+	height: 100%;
+    border-radius: 5px;
+}
+
+.form-input-button-div{
+    display: flex;
+}
+

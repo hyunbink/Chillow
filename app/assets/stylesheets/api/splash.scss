@@ -1,0 +1,120 @@
+.splash-bottom-container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.splash-img{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.splash-link-container{
+    display: flex;
+    flex-flow: row wrap;
+    height: 350px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px;
+    box-shadow: 0px 1px 4px rgb(33, 33, 40);
+    transition: all 300ms ;
+    border-radius:8px;
+    margin-inline: 3em;
+}
+
+.splash-link-container:hover{
+    transform: scale(1.02) translate(0px, -8px);
+    box-shadow: 0px 3px 6px black;
+    .splash-button{
+        background-color: rgb(0, 106, 255);
+        color: white;
+
+    }
+}
+
+.splash-h1{
+    color: rgb(42, 42, 51);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.splash-p{
+    color: rgb(42, 42, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.splash-button{
+    background-color: white;
+    width: 80%;
+    padding: 8px;
+    border: 1px solid rgb(0, 106, 255);
+    border-radius: 4px;
+    color: rgb(0, 106, 255);
+    font-size: 16px;
+}
+
+.splash-button-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.splash-bottom-links{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex-flow: row wrap;
+}
+
+
+#search-button{
+    height: 68px;
+    position: absolute;
+    width: 68px;
+    background-color: transparent;
+    border: none;
+    transform: translateX(-70px);
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+#search-magnifying{
+    color: #8e8e8e;
+    height: 50%;
+    width: 50%;
+    &:hover{
+        color: rgb(0, 106, 255);
+    }
+    &:active{
+        color: (rgb(2, 56, 133))
+    }
+}
+
+
+.no-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    p{
+        font-size: x-large;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}

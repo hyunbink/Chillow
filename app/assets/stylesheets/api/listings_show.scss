@@ -1,0 +1,225 @@
+.listing-div{
+    display: flex;
+    height: 100vh;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.listing-price{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.listing-physical-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.index-listing-char-info{
+    padding-bottom: 8px;
+}
+
+.listing-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.listing-address {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.listing-physical-div{
+    margin-bottom: 8px;
+}
+
+.listing-address-div{
+    margin-bottom: 8px;
+}
+
+.listing-price-div{
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.listing-photos{
+    width: 50%;
+    height: 25%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+}
+
+#listing-photo-0{
+    width: 100%;
+    height: 50%;
+}
+
+.listing-div-left{
+    width: 75%;
+    overflow-y: scroll;
+    padding-left: 5px;
+}
+
+.listing-div-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    // justify-content: ;
+}
+
+
+#heart{
+    color: rgba(0,106,255,255);
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 24px;
+    font-size: 24px;
+}
+
+.listing-nav-header{
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    // margin-top: 2px;
+    border-bottom: .5px solid grey;
+}
+
+.listings-mini-map{
+    // overflow-y: scroll;
+    width: 100%;
+    height: 50%;
+    padding-top: 10px;
+}
+
+#show-map{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.show-edit-link-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+    flex-direction: column;
+}
+
+.show-edit-link{
+    text-decoration: none;
+    // color: white;
+    // background-color: rgba(0,106,255,255);
+    // padding: 5px;
+    // align-self: center;
+    background-color: rgb(0, 106, 255);
+    border-color: rgb(0, 106, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 9px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    // margin-top: 5%;
+    margin-bottom: 4%;
+    height: 30px;
+    width: 80%;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(13, 69, 153);
+        border-color: rgb(13, 69, 153);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+    &:active{
+        background-color: rgb(14, 52, 109);
+    }
+}
+
+#filled-heart{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: auto;
+    width: 8%;
+    color: white;
+}
+
+#empty-heart{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: auto;
+    width: 8%;
+    color: white;
+}
+
+.last-photo-blur-odd{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+    filter: blur(8px);
+}
+
+.last-photo-blur-even{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: 2px solid white;
+    border-right: 5px solid white;
+    box-sizing: border-box;
+    filter: blur(8px);
+}
+
+.blur-container-even{
+    width: 50%;
+    height: 25%;
+    position: relative;
+    display: inline-flex;
+}
+
+.blur-container-odd{
+    width: 100%;
+    height: 25%;
+    position: relative;
+    display: inline-flex;
+}
+
+.blur-img-text{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+// .tour-button{
+//     background-color: rgba(0,106,255,255);
+//     position: absolute;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//     color: white;
+// }
+
+
