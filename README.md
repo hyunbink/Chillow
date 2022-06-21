@@ -73,8 +73,7 @@ Only logged in users can upload/edit their properties to sell.
 
 ## Looking Ahead
 
-Incorporating Agents
-- Messaging/appointments/live-chat with agents or owners of listings
+Incorporating Agents: Messaging/appointments/live-chat with agents or owners of listings
 <br>
 Search Filtering
 <br>
