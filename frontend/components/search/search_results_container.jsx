@@ -5,9 +5,6 @@ import { createSave, deleteSave } from "../../actions/save_actions";
 import { clearErrors } from "../../actions/session_actions";
 
 const mSTP = state => {
-    console.log("search contai", state.entities.listings)
-    console.log("state sate", state)
-    
     return {
         listings: state.entities.listings,
         saves: Object.entries(state.entities.saves),

@@ -16,7 +16,7 @@ class SavesIndex extends React.Component{
         // if (this.props.listings > this.props.saves) return null;
         let listingsArr = Object.values(this.props.listings);
         let that = this;
-        console.log("check saved listings", listingsArr)
+        if (!listingsArr[0]) return null;
         return(
             (listingsArr.length === 0) ? <>
             <br/> 

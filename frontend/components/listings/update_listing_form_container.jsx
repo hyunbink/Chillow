@@ -30,7 +30,6 @@ render() {
 };
 
 const mSTP = (state, ownProps) => {
-    console.log('update errs state', state)
     return({
         listing: state.entities.listings[ownProps.match.params.listingId],
         formType: 'Update Listing',
