@@ -3,6 +3,7 @@ import SearchResults from "./search_results";
 import { fetchAllListings, search } from "../../actions/listing_actions";
 import { createSave, deleteSave } from "../../actions/save_actions";
 import { clearErrors } from "../../actions/session_actions";
+import { openModal } from "../../actions/modal_actions";
 
 const mSTP = state => {
     return {
@@ -17,7 +18,8 @@ const mDTP = dispatch => ({
     deleteSave: save => dispatch(deleteSave(save)),
     createSave: save => dispatch(createSave(save)),
     fetchAllListings: ()=> dispatch(fetchAllListings()),
-    clearErrors: ()=> dispatch(clearErrors())
+    clearErrors: ()=> dispatch(clearErrors()),
+    openModal: (modal, listingId) => dispatch(openModal(modal, listingId))
 });
 
 export default connect(mSTP, mDTP)(SearchResults);
