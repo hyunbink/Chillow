@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 
-const NavBar = ({ currentUser, logout, clearErrors }) => {
+const NavBar = ({ currentUser, logout, clearErrors, fetchAllListings }) => {
     const sessionLinks = () => (
         <nav className='top-nav'>
             <div className='nav-left'>
@@ -40,7 +40,7 @@ const NavBar = ({ currentUser, logout, clearErrors }) => {
             <span id='logged-in-user'>
                     <div className='nav-left-link'>{currentUser.email}</div>
                 <div className="drop-down-box">
-                    <div className='drop-down-saves-link'><Link onClick={()=> clearErrors()} to={`/listings/saves`}>Saved Listings</Link></div>
+                    <div className='drop-down-saves-link'><Link onClick={()=> {clearErrors(), fetchAllListings()}} to={`/listings/saves`}>Saved Listings</Link></div>
                     <div className='drop-down-saves-link'><Link onClick={()=> clearErrors()} to="/listings/user/listings">Your Listings</Link></div>
                     <div className='drop-down-saves-link'><Link  onClick={logout} to="/">Logout</Link></div>
                 </div>

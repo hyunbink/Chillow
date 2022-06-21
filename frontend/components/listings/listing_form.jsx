@@ -107,7 +107,6 @@ class ListingForm extends React.Component {
 
     render(){
         const { street, city, zip_code, state, latitude, longitude, sqft, beds, baths, price, photoUrls } = this.state;
-        console.log("in the form props", this.props.errors)
         return(
             <div className="form-div-container">
                 <form className="form-div-listing" onSubmit={this.handleSubmit}>
