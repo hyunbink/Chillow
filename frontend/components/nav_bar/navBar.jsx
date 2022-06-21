@@ -40,8 +40,8 @@ const NavBar = ({ currentUser, logout, clearErrors }) => {
             <span id='logged-in-user'>
                     <div className='nav-left-link'>{currentUser.email}</div>
                 <div className="drop-down-box">
-                    <div className='drop-down-saves-link'><Link to={`/listings/saves`}>Saved Listings</Link></div>
-                    <div className='drop-down-saves-link'><Link to="/listings/user/listings">Your Listings</Link></div>
+                    <div className='drop-down-saves-link'><Link onClick={()=> clearErrors()} to={`/listings/saves`}>Saved Listings</Link></div>
+                    <div className='drop-down-saves-link'><Link onClick={()=> clearErrors()} to="/listings/user/listings">Your Listings</Link></div>
                     <div className='drop-down-saves-link'><Link  onClick={logout} to="/">Logout</Link></div>
                 </div>
                 </span>
