@@ -1,7 +1,10 @@
-# README
+# Chillow
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <img width="180" height="70" src="https://github.com/hyunbink/Chillow/app/assets/images/logo.png">
+</p>
+
+Chillow is a full stack clone of real estate marketplace Zillow built with React, Redux, Ruby on Rails, Javascript, PostgreSQL, AWS, Google Maps API, and SCSS. Chillow allows users to upload, search, and save listings with an immersive photo experience.
 
 Things you may want to cover:
 
