@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 
-const NavBar = ({ currentUser, logout }) => {
+const NavBar = ({ currentUser, logout, clearErrors }) => {
     const sessionLinks = () => (
         <nav className='top-nav'>
             <div className='nav-left'>
                 <Link className='nav-left-link' to='/listings'>Buy</Link>
                 {/* <Link className='nav-left-link' href='#'>Rent</Link> */}
-                <Link to='/listings/new' className='nav-left-link'>Sell</Link>
+                <Link onClick={()=> clearErrors()} to='/listings/new' className='nav-left-link'>Sell</Link>
                 
             </div>
-            <Link to='/' className='nav-mid'>
+            <Link onClick={()=> clearErrors()} to='/' className='nav-mid'>
                 <img src={window.logo} alt="chillow-logo"></img>
             </Link>
             <div className='nav-right'>
@@ -29,9 +29,9 @@ const NavBar = ({ currentUser, logout }) => {
             <div className='nav-left'>
                 <Link className='nav-left-link' to='/listings'>Buy</Link>
                 {/* <Link className='nav-left-link' href='#'>Rent</Link> */}
-                <Link to='/listings/new' className='nav-left-link'>Sell</Link>
+                <Link onClick={()=> clearErrors()} to='/listings/new' className='nav-left-link'>Sell</Link>
             </div>
-            <Link to='/' className='nav-mid'>
+            <Link onClick={()=> clearErrors()} to='/' className='nav-mid'>
                 <img src={window.logo} alt="chillow-logo"></img>
             </Link>
             <div className='nav-right'>

@@ -65,5 +65,6 @@ export const deleteListing = listingId => dispatch => {
 
 export const search = query => dispatch => {
     return ListingAPIUtil.search(query)
-        .then(listings => dispatch(receiveSearchListings(listings)))
+        .then(listings => dispatch(receiveSearchListings(listings)),
+        (err) => dispatch(receiveErrors(err.responseJSON)))
 }

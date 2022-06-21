@@ -49,7 +49,7 @@ class MarkerManager {
         
         
         let that = this
-        if (this.saves.includes(listing.id)) {
+        if ( this.saves && this.saves.includes(listing.id)) {
             that.icon = {
                 url: "https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
             };
@@ -73,7 +73,7 @@ class MarkerManager {
         
         const mouseOut = () => {
             let that = this
-            if (this.saves.includes(listing.id)) {
+            if (this.saves && this.saves.includes(listing.id)) {
                 that.icon = {
                     url: "https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
                 };

@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import SavesIndex from "./saves";
 import { createSave, deleteSave } from '../../actions/save_actions';
-import { fetchListing } from '../../actions/listing_actions';
+import { fetchAllListings, fetchListing } from '../../actions/listing_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 
@@ -24,7 +24,7 @@ const mDTP = dispatch => {
         deleteSave: save => dispatch(deleteSave(save)),
         openModal: (modal, listingId) => dispatch(openModal(modal, listingId)),
         closeModal: () => dispatch(closeModal()),
-
+        fetchAllListings: () => dispatch(fetchAllListings())
     })
 };
 
