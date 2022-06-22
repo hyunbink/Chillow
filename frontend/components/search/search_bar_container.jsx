@@ -4,7 +4,6 @@ import { search } from "../../actions/listing_actions";
 import { withRouter } from "react-router-dom";
 
 const mSTP = state => ({
-    // query: 
 });
 
 const mDTP = dispatch => ({

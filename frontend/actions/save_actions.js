@@ -30,7 +30,3 @@ export const deleteSave = save => dispatch => (
     dispatch(destroySave(save))
     ))
 );
-
-// export const fetchSaves = saves => dispatch => (
-//     SaveAPIUtil.
-// )

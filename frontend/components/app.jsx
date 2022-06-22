@@ -1,19 +1,10 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import {
-    Route,
-    Redirect,
-    Switch,
-    Link,
-    HashRouter,
-    
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/navBar_container';
 import Splash from './splash/splash'
-import ListingShowContainer from './listings/listing_show_container';
 import ListingIndexContainer from './listings/listings_index_container';
 import UpdateListingFormContainer from './listings/update_listing_form_container';
 import CreateListingFormContainer from './listings/create_listing_form_container';

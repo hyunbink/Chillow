@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 
@@ -10,15 +8,8 @@ class ListingIndex extends React.Component{
         this.saved = [];
         this.savedObj = {};
         this.hover = '';
-        this.removeSave = this.removeSave.bind(this);
     }
 
-    removeSave(id){
-        this.saved = this.saved.filter(ele => ele !== id);
-        console.log('removing', id, this.saved)
-    }
-
-    
     componentDidMount(){
         let that = this;
         if (!this.props.fromSearchListings) {
@@ -27,15 +18,10 @@ class ListingIndex extends React.Component{
         this.saved = [];
         if (this.props.saves) {
             this.props.saves.forEach(element => {
-                // that.props.fetchListing(element[1].listing_id);
                 let eleList = element[1]
                 if (that.saved.includes(eleList.listing_id)) return;
-                // console.log(`${element[0]} elementId`, eleList.listing_id)
-                // console.log(`${element[0]} element`, eleList)
                 that.saved.push(eleList.listing_id);
-                // console.log('savedArr', that.saved);
                 that.savedObj = {[eleList]: element[0] };
-                // console.log('savedObj', that.savedObj)
             });
         }  
     }
@@ -64,7 +50,6 @@ class ListingIndex extends React.Component{
     render(){
         if (!this.props.listings) return null;
         let listingsArr = Object.values(this.props.listings)
-        // console.log('listingsArr', listingsArr[0])
         return(
             <div className="index-div-right">
                 <div key='listings' className="index-all-listings">
@@ -79,11 +64,7 @@ class ListingIndex extends React.Component{
                                     </img>
                                     {this.props.fromUserListings ? <div></div> : this.saved.includes(listing.id) ? 
                                         <FaHeart id="filled-heart" 
-                                        onClick={()=> {
-                                            this.props.deleteSave(this.savedObj[listing.id]), this.removeSave(listing.id)
-                                                // .then(this.setState(saved = this.saved.filter(ele => ele !== listing.id)) )
-                                            // console.log("from render", this.saved.filter(ele => ele !== listing.id))
-                                        }
+                                        onClick={()=> this.props.deleteSave(this.savedObj[listing.id])
                                             } /> : 
                                         <FaRegHeart id="empty-heart" 
                                         onClick={()=>this.props.createSave({user_id: this.props.currentUserId, listing_id: listing.id})} 

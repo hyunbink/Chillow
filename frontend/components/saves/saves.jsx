@@ -15,7 +15,6 @@ class SavesIndex extends React.Component{
     render(){
         let listingsArr = Object.values(this.props.listings);
         listingsArr = listingsArr.filter(ele => ele)
-        console.log("saves", listingsArr)
         let savesArr;
         savesArr = Object.values(this.props.saves).map(list => list[1].listing_id)
         let that = this;

@@ -28,7 +28,6 @@ export const signup = user => dispatch => (
         .then(payload => (dispatch(receiveCurrentUser(payload))), 
     err => (dispatch(receiveErrors(err.responseJSON))))
 );
-// payload coming from jbuilder template, holding user, listings, saves
 
 export const login = user => dispatch => (
     APIUtil.login(user)

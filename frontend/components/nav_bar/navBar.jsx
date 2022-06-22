@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
-import { FaUserCircle } from 'react-icons/fa';
+// import { BsLinkedin, BsGithub } from 'react-icons/bs';
+// import { FaUserCircle } from 'react-icons/fa';
 
 const NavBar = ({ currentUser, logout, clearErrors, fetchAllListings }) => {
     const sessionLinks = () => (
@@ -54,7 +54,3 @@ const NavBar = ({ currentUser, logout, clearErrors, fetchAllListings }) => {
 };
 
 export default NavBar;
-
-{/* <BsGithub className='href-logo'/>
-<BsLinkedin className='href-logo'/> */}
-{/* <FaUserCircle id='href-logo'/> */}

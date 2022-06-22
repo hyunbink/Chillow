@@ -26,9 +26,7 @@ class ListingForm extends React.Component {
 
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map, "", 'pin');
-        // add conditional to have the click listener only when creating new form
-        
+        this.MarkerManager = new MarkerManager(this.map, "", 'pin');        
         
         if (this.props.formType === 'Update Listing' ){
             this.MarkerManager.createMarkerFromForm(this.state.latitude, this.state.longitude);
