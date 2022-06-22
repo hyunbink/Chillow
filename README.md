@@ -44,7 +44,7 @@
 ### User-Authentication
 
 
-<img width="100%" height="400" align="left" alt='login gif' src=''> 
+<img width="100%" height="400" align="left" alt='login gif' src='https://github.com/hyunbink/Chillow/blob/main/gifs/user-auth.gif'> 
 
 * Users can login with as a Demo User
 * Error messages will be displayed accordingly
