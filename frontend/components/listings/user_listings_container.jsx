@@ -8,7 +8,8 @@ import { createSave, deleteSave } from '../../actions/save_actions';
 const mSTP = state => {
     return({
         listings: state.entities.listings,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        
     })
 };
 
