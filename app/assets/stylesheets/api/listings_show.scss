@@ -64,6 +64,7 @@
     width: 75%;
     overflow-y: scroll;
     padding-left: 5px;
+    height: 100%;
 }
 
 .listing-div-right{
@@ -223,3 +224,50 @@
 // }
 
 
+@media (max-width: 750px) {
+    .listing-div{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        // overflow-y: scroll;
+        // height: 100vh;
+    }
+    .listing-div-right{
+        width: 100%;
+    }
+    .listing-nav-header{
+        height: 11%;
+    }
+    .listings-mini-map{
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        width: 80%;
+        align-self: center;
+    }
+    #show-map{
+        width: 100%;
+        height: 100%;
+    }
+    .show-edit-link-container{
+        width: 60%;
+        align-self: center;
+    }
+    .listing-div-left{
+        width: 95%;
+        height: fit-content;
+        // margin-bottom: 2em;
+        // overflow-y: hidden;
+        // height: fit-content;
+    }
+    .listing-photos{
+        height: 250px;
+        // width: 100%;
+    }
+    .blur-container-even{
+        height: 100%;
+    }
+    #listing-photo-0{
+        height: 100%;
+    }
+}

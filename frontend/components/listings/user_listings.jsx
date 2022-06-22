@@ -22,14 +22,14 @@ class UserListings extends React.Component{
         let that = this;
         
         return(
-            (listingsArr.length === 0) ? <>
+            (listingsArr.length === 0) ? <div className="no-search-wrapper">
             <br/> 
             <div className="no-search" onClick={()=>{
             (that.props.history.push('/listings/new')); 
         }}> <img src={window.searchNA} alt="No-searches-found" ></img>
             <p>You have no Listings. Click here to make a new Listing!</p>
             </div>
-            </> : 
+            </div> : 
                 <div className="main-index-div">
                 <div className="left-half" >
                 <ListingMap

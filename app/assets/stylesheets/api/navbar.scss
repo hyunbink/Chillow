@@ -1,3 +1,116 @@
+.top-nav{
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    height: 80px;
+    z-index: 100%;
+    font-size: 16px;
+}
+
+.nav-left{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 33%;
+}
+
+.nav-left-link {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    align-self: center;
+    justify-content: center;
+    padding-top: 14px;
+    color: rgb(39, 39, 39);
+    height: 30px;
+    &:active{
+        box-shadow: 0 0 0px 1px #fff, 0 0 2px 3px #a6e5ff, 0 0 2px 4px #006aff;
+    }
+}
+
+.nav-mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    cursor: default;
+}
+
+.nav-mid img{
+    max-height: 65px;
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        box-shadow: 0 0 0px 1px #fff, 0 0 2px 3px #a6e5ff, 0 0 2px 4px #006aff;
+    }
+}
+
+.nav-right{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    // padding-right: 14px;
+    margin-right: 14px;
+    width: 33%;
+    #personal-links{
+        padding-left: 14px;
+        padding-right: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: rgb(39, 39, 39);
+    }
+    #login{
+        padding-left: 14px;
+        padding-right: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: rgb(39, 39, 39);
+    }
+    #signup{
+        padding-right: none;
+        // margin-right: 14px;
+        padding-left: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: rgb(39, 39, 39);
+    }
+}
+
+a#login:hover{
+    color: rgba(0,106,255,255);
+}
+
+#signup:hover{
+    color: rgba(0,106,255,255);
+}
+
+#logout:hover{
+    color: rgba(0,106,255,255);
+}
+
+.nav-left-link:hover{
+    color: rgba(0,106,255,255);
+}
+
+#user-symbol{
+    height: 16px;
+    color: rgba(0,106,255,255);
+}
+
+.href-logo{
+    height: 30px;
+    width: 30px;
+    color: rgb(39, 39, 39);
+    &:hover{
+        color: rgba(0,106,255,255);
+    }
+    &:active{
+        color: darkblue;
+    }
+}
+
 #page-nav-bar{
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
@@ -5,6 +118,7 @@
     font-weight: 700;
     margin-bottom: 5%;
     font-size: 24px;
+    text-align: center;
 }
 
 .drop-down-box{
@@ -51,4 +165,16 @@
 
 .drop-down-saves-link{
     display: flex;
+}
+
+@media (max-width: 750px) {
+    .top-nav{
+        justify-content: space-between;
+    }
+    #personal-links{
+        display: none;
+    }
+    .drop-down-box{
+        width: 150px;
+    }
 }

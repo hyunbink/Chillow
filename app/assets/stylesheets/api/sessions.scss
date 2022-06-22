@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#root{
+    overflow-x: hidden;
+}
+
 .form-div{
     display: flex;
     height: 100vh;
     height: calc(100vh - 80px);
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .img-holder{
@@ -98,3 +103,11 @@
     justify-content: center;
 }
 
+@media (max-width: 650px) {
+    .login-form-container{
+        width: 100%;
+    }
+    .img-holder{
+        display: none;
+    }
+}
