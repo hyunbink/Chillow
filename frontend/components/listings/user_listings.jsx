@@ -20,7 +20,6 @@ class UserListings extends React.Component{
             element.owner_id === this.props.currentUserId ? listingsArr.push(element) : null
         });
         let that = this;
-        
         return(
             (listingsArr.length === 0) ? <div className="no-search-wrapper">
             <br/> 
@@ -35,7 +34,6 @@ class UserListings extends React.Component{
                 <ListingMap
                 listings={listingsArr}
                 openModal={that.props.openModal}
-                saves={that.props.userSaves}
                 />
                 </div>
                 

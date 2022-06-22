@@ -9,21 +9,9 @@ class ListingIndex extends React.Component{
         super(props);
         this.saved = [];
         this.savedObj = {};
-        this.mapIconHover = this.mapIconHover.bind(this);
         this.hover = '';
     }
 
-    mapIconHover(id, status){
-        // document.getElementsByClassName(".index-listing",)
-        // if (status === 'enter') {
-        //     console.log("grabbing by id", document.getElementById(`index-listing-item-${id}`))
-        //     console.log("in hover", this.props.listings[id])
-        //     this.setState({hover: '456'})
-        // } else {
-        //     console.log('id', id)
-        //     console.log("exit", this.hover)
-        // }
-    }
     
     componentDidMount(){
         let that = this;
@@ -76,8 +64,6 @@ class ListingIndex extends React.Component{
                 <div key='listings' className="index-all-listings">
                     {listingsArr.map((listing,j)=>(
                             <div key={j} id={`index-listing-item-${listing.id}`} 
-                            onMouseEnter={() => this.mapIconHover(listing.id, 'enter')} 
-                            onMouseLeave={() => this.mapIconHover(listing.id, 'leave')}
                             className="index-listing" 
                             onClick={()=>this.props.openModal('show',  listing.id)} >
                                 <div className="index-listing-photo-div">

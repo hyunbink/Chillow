@@ -7,6 +7,14 @@ class MarkerManager {
         this.icon2 = null;
         this.saves = saves;
     }
+
+    listingListeners(listings){
+        // listings.forEach((list) => {
+        //     document.getElementById(`index-listing-item-${list.id}`)
+        //         .addEventListener("mouseover", ()=>console.log("hello mate", list))
+        //         // I list, now have it hover to that icon on map and show mosueover effects of icon
+        // })
+    }
     
     
     updateMarkers(listings){
@@ -16,6 +24,8 @@ class MarkerManager {
         listings
         // .filter(listing => !this.markers[listing.id])
         .forEach(newListing => this.createMarkerFromListing(newListing));
+
+        this.listingListeners(listings)
         
         // Object.keys(this.markers)
         //     .filter(listingId => !listingsObj[listingId])
@@ -41,19 +51,12 @@ class MarkerManager {
             disableAutoPan: true
         });
         
-        const onClick = (listing) => {
-            // eventually change the location to instead render modal
-            // location.href = `#/listings/${marker.listingId}`
-            this.props.openModal('show',  listing.id)    // get this to render modal
-        };
-        
-        
         let that = this
         if ( this.saves && this.saves.includes(listing.id)) {
             that.icon = {
-                url: "https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
+                url: window.heart,
+                scaledSize: new google.maps.Size(23,23)
             };
-
         } else {
             that.icon = {
                 url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
@@ -64,9 +67,16 @@ class MarkerManager {
         }
         
         const mouseOver = () => {
-            this.icon2 = {
-                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-            };
+            if (this.saves && this.saves.includes(listing.id)) {
+                that.icon2 = {
+                    url: window.heart2,
+                    scaledSize: new google.maps.Size(23,23)
+                };
+            } else {
+                that.icon2 = {
+                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                };
+            }
             marker.infoWindow.open(that.map, marker);
             marker.setIcon(that.icon2);
         };
@@ -75,7 +85,9 @@ class MarkerManager {
             let that = this
             if (this.saves && this.saves.includes(listing.id)) {
                 that.icon = {
-                    url: "https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
+                    url: window.heart,
+                    scaledSize: new google.maps.Size(23,23)
+
                 };
             } else {
                 that.icon = {
@@ -97,6 +109,11 @@ class MarkerManager {
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
         marker.addListener("click", ()=>(this.handleClick('show',listing.id)));
+
+        document.getElementById(`index-listing-item-${listing.id}`)
+            .addEventListener("mouseover", mouseOver)
+        document.getElementById(`index-listing-item-${listing.id}`)
+            .addEventListener("mouseout", mouseOut)
         // this.markers[marker.listingId] = marker;
     };
 
@@ -124,7 +141,7 @@ class MarkerManager {
         });
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
-        this.markers.push(marker);
+        // this.markers.push(marker);
     };
 
     createMarkerFromShow(listing) {
@@ -153,7 +170,7 @@ class MarkerManager {
         });
         marker.addListener("mouseover", mouseOver);
         marker.addListener("mouseout", mouseOut);
-        this.markers.push(marker);
+        // this.markers.push(marker);
     };
 
     removeMarker(marker) {
@@ -162,8 +179,9 @@ class MarkerManager {
     }
 
     clearMarkers(){
+        let that = this;
         for (let i = 0; i < this.markers.length; i++) {
-            this.markers[i].setMap(null);
+            that.markers[i].setMap(null);
         }
     }
 }
