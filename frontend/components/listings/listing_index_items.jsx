@@ -93,21 +93,22 @@ class ListingIndex extends React.Component{
                                     />} 
                                 </div>
                                 <div className="index-listing-info">
-                                    <div className="listing-price-div">
-                                        <span className="listing-price">
+                                    <div className="index-listing-price-div">
+                                        <span className="index-listing-price">
                                             ${listing.price.toLocaleString(undefined, { minimumFractionDigits: 0 })}
                                         </span>
                                     </div>
-                                    <div className="index-listing-char-info">
-                                        <span className="listing-physical-info">{listing.beds} </span>
-                                        <span className="listing-info">bd | </span>
-                                        <span className="listing-physical-info">{listing.baths} </span>
-                                        <span className="listing-info">ba | </span>
-                                        <span className="listing-physical-info">{listing.sqft.toLocaleString(undefined, { minimumFractionDigits: 0 })} </span>
-                                        <span className="listing-info">sqft</span>
+                                    <div className="index-listing-char-info-div">
+                                        <span className="index-listing-physical-info">{listing.beds} bds | </span>
+                                        {/* <span className="index-listing-info">bd | </span> */}
+                                        <span className="index-listing-physical-info">{listing.baths} ba | </span>
+                                        {/* <span className="index-listing-info">ba | </span> */}
+                                        <span className="index-listing-physical-info">{listing.sqft.toLocaleString(undefined, { minimumFractionDigits: 0 })} sqft - House for sale</span>
+                                        {/* <span className="index-listing-info">sqft</span> */}
                                     </div>
-                                    <div className="listing-address-div">
+                                    <div className="listing-index-address-div">
                                         <span className="listing-address">{listing.street}, </span>
+                                        {/* <br/> */}
                                         <span className="listing-address">{listing.city}, </span>
                                         <span className="listing-address">{listing.state} </span>
                                         <span className="listing-address">{listing.zip_code}</span>
