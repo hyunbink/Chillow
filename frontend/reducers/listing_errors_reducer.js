@@ -4,9 +4,7 @@ import {
     RECEIVE_LISTING,
     RECEIVE_SEARCH_LISTINGS
 } from "../actions/listing_actions";
-import { 
-    CLEAR_ERRORS 
-} from "../actions/session_actions";
+import { CLEAR_ERRORS } from "../actions/session_actions";
 
 const listingErrorsReducer = (state = [], action) => {
     Object.freeze(state);

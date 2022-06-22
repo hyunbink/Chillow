@@ -8,35 +8,16 @@ class MarkerManager {
         this.saves = saves;
     }
 
-    listingListeners(listings){
-        // listings.forEach((list) => {
-        //     document.getElementById(`index-listing-item-${list.id}`)
-        //         .addEventListener("mouseover", ()=>console.log("hello mate", list))
-        //         // I list, now have it hover to that icon on map and show mosueover effects of icon
-        // })
-    }
-    
-    
     updateMarkers(listings){
         const listingsObj = {};
         listings.forEach(listing => listingsObj[listing.id] = listing);
-        
-        listings
-        // .filter(listing => !this.markers[listing.id])
-        .forEach(newListing => this.createMarkerFromListing(newListing));
-
-        this.listingListeners(listings)
-        
-        // Object.keys(this.markers)
-        //     .filter(listingId => !listingsObj[listingId])
-        //     .forEach((listingId) => this.removeMarker(this.markers[listingId]));
-        
+        listings.forEach(newListing => this.createMarkerFromListing(newListing));
     }
     
     createMarkerFromListing(listing) {
         this.clearMarkers();
         const position = new google.maps.LatLng(listing.latitude, listing.longitude);
-        // for display hover window over marker
+
         const contentListingInfo = `<div style="display: flex; justify-content: space-between;">
         <div>
         <img src="${listing.photoUrls[0]}" style= 'width: 70px; height:70px; padding-right:15px;'></img>
@@ -46,6 +27,7 @@ class MarkerManager {
         <h2 style='font-family: Roboto, Arial; font-size: 13px; color:#333;' > ${listing.beds} bd ${listing.baths} ba  ${listing.sqft} sqft</h2>
         </div>
         </div>`;
+
         const listingInfoWindow = new google.maps.InfoWindow({
             content: contentListingInfo,
             disableAutoPan: true
@@ -173,10 +155,10 @@ class MarkerManager {
         // this.markers.push(marker);
     };
 
-    removeMarker(marker) {
-        this.markers[marker.listingId].setMap(null);
-        delete this.markers[marker.listingId];
-    }
+    // removeMarker(marker) {
+    //     this.markers[marker.listingId].setMap(null);
+    //     delete this.markers[marker.listingId];
+    // }
 
     clearMarkers(){
         let that = this;

@@ -1,4 +1,9 @@
-import { RECEIVE_ALL_LISTINGS, RECEIVE_LISTING, REMOVE_LISTING, RECEIVE_SEARCH_LISTINGS } from "../actions/listing_actions";
+import { 
+    RECEIVE_ALL_LISTINGS, 
+    RECEIVE_LISTING, 
+    REMOVE_LISTING, 
+    RECEIVE_SEARCH_LISTINGS 
+} from "../actions/listing_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 

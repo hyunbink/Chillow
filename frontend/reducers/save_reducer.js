@@ -9,7 +9,6 @@ const saveReducer = (state = {}, action) => {
         case RECEIVE_SAVE:
             return Object.assign({}, state, {[action.save.id]: action.save } );
         case RECEIVE_ALL_SAVES:
-            // return Object.assign({}, state, action.saves)
         case DESTROY_SAVE:
             let nxtState = Object.assign({}, state);
             delete nxtState[action.save.id];
@@ -24,7 +23,6 @@ const saveReducer = (state = {}, action) => {
                 .filter(value=> value.listing_id === action.listingId);
             for (let i = 0; i < array.length; i++) {
                 delete saveState[array[i].id];
-                
             }
             delete saveState[action.save]
         default:

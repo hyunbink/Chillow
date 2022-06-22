@@ -29,8 +29,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.logout = logout;
     // window.signup = signup;
 })
-
-
-
-
-// img src={window.heroBanner}
