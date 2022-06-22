@@ -44,9 +44,7 @@
 ### User-Authentication
 
 
-<img width="100%" height="400" align="left" alt='successful login gif' src=''> 
-
-<img width="100%" height="400" align="left" alt='errors for login gif' src=''>
+<img width="100%" height="400" align="left" alt='login gif' src=''> 
 
 * Users can login with as a Demo User
 * Error messages will be displayed accordingly
