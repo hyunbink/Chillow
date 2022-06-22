@@ -42,43 +42,25 @@ class ListingIndex extends React.Component{
 
     componentDidUpdate(){
         let that = this;
-        // this.saved = [];
-        
         if (this.props.saves) {
             this.props.saves.forEach(element => {
-                // that.props.fetchListing(element[1].listing_id);
                 let eleList = element[1]
                 if (that.saved.includes(eleList.listing_id)) return;
-                // console.log(`${element[0]} elementId`, eleList.listing_id)
-                // console.log(`${element[0]} element`, eleList)
                 that.saved.push(eleList.listing_id);
-                // console.log('savedArr', that.saved);
                 that.savedObj = {[eleList]: element[0] };
-                // console.log('savedObj', that.savedObj);
-                // 
             });
+            if (that.saved.length !== that.props.saves.length) {
+                that.saved = [];
+                that.props.saves.forEach(element => {
+                    let eleList = element[1]
+                    if (that.saved.includes(eleList.listing_id)) return;
+                    that.saved.push(eleList.listing_id);
+                    that.savedObj = {[eleList]: element[0] };
+                });
+            }
         } 
-        if (this.saved.length !== this.props.saves.length) {
-            console.log("uneven");
-            this.saved = [];
-            this.props.saves.forEach(element => {
-                // that.props.fetchListing(element[1].listing_id);
-                let eleList = element[1]
-                if (that.saved.includes(eleList.listing_id)) return;
-                // console.log(`${element[0]} elementId`, eleList.listing_id)
-                // console.log(`${element[0]} element`, eleList)
-                that.saved.push(eleList.listing_id);
-                // console.log('savedArr', that.saved);
-                that.savedObj = {[eleList]: element[0] };
-                // console.log('savedObj', that.savedObj);
-                // 
-            });
-        }
-        console.log("saves update comp", this.props.saves)
-        console.log("saved arr update comp", this.saved)
     }
 
-//  can't like via index, need to change z-index? not rendering empty heart after dislike, cause Im not taking out saveIds in arr
     render(){
         if (!this.props.listings) return null;
         let listingsArr = Object.values(this.props.listings)
