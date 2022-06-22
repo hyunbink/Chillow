@@ -102,12 +102,12 @@ class MarkerManager {
     createMarkerFromForm(lat, lng) {
         this.clearMarkers();
         const position = new google.maps.LatLng(lat, lng);
-        const mouseOver = () => {
-            marker.setIcon(this.icon2);
-        };
-        const mouseOut = () => {
-            marker.setIcon(this.icon);
-        };
+        // const mouseOver = () => {
+        //     marker.setIcon(this.icon2);
+        // };
+        // const mouseOut = () => {
+        //     marker.setIcon(this.icon);
+        // };
 
         this.icon = {
             url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
@@ -121,9 +121,9 @@ class MarkerManager {
             map: this.map,
             icon: this.icon
         });
-        marker.addListener("mouseover", mouseOver);
-        marker.addListener("mouseout", mouseOut);
-        // this.markers.push(marker);
+        // marker.addListener("mouseover", mouseOver);
+        // marker.addListener("mouseout", mouseOut);
+        this.markers.push(marker);
     };
 
     createMarkerFromShow(listing) {
@@ -155,10 +155,10 @@ class MarkerManager {
         // this.markers.push(marker);
     };
 
-    // removeMarker(marker) {
-    //     this.markers[marker.listingId].setMap(null);
-    //     delete this.markers[marker.listingId];
-    // }
+    removeMarker(marker) {
+        this.markers[marker.listingId].setMap(null);
+        delete this.markers[marker.listingId];
+    }
 
     clearMarkers(){
         let that = this;
