@@ -18,14 +18,14 @@ class SavesIndex extends React.Component{
         let that = this;
         if (!listingsArr[0]) return null;
         return(
-            (listingsArr.length === 0) ? <>
+            (listingsArr.length === 0) ? <div className="no-search-wrapper">
             <br/> 
             <div className="no-search" onClick={()=>{
             (that.props.history.push('/listings')); 
         }}> <img src={window.searchNA} alt="No-searches-found" ></img>
             <p>No Saved Listings. Click here to view all Listings!</p>
             </div>
-            </> :
+            </div> :
             <div className="main-index-div">
                 <div className="left-half" >
                     <ListingMap

@@ -12,7 +12,7 @@ class SearchResults extends React.Component{
         let listingsArr = Object.values(this.props.listings)
         let that = this;
         if (this.props.searchErrors.length > 0) {
-            return <>
+            return <div className="no-search-wrapper">
                 <br/> 
                 <div className="no-search" onClick={()=>{
                 that.props.clearErrors()
@@ -20,7 +20,7 @@ class SearchResults extends React.Component{
             }}> <img src={window.searchNA} alt="No-searches-found" ></img>
                 <p>OOPS! No results found. Click here to try again!</p>
                 </div>
-                </>
+                </div>
         }
         return(
             <div className="main-index-div">

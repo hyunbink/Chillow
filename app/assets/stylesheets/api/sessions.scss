@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#root{
+    overflow-x: hidden;
+}
 
 .form-div{
     display: flex;
     height: 100vh;
     height: calc(100vh - 80px);
     overflow-y: hidden;
-
+    overflow-x: hidden;
 }
 
 .img-holder{
@@ -100,176 +103,11 @@
     justify-content: center;
 }
 
-#page-nav-bar{
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: center;
-    font-weight: 700;
-    margin-bottom: 5%;
-    font-size: 24px;
-}
-
-
-// splash
-.splash-bottom-container{
-    margin-top: 5%;
-    display: flex;
-    // border: solid 3px red;
-    justify-content: center;
-    margin-bottom: 5%;
-}
-
-.splash-img{
-    display: flex;
-    width: 100%;
-    height: auto;
-}
-
-.splash-link-container{
-    display: flex;
-    flex-flow: row wrap;
-    height: 350px;
-    width: 250px;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 16px;
-    box-shadow: 0px 1px 4px rgb(33, 33, 40);
-    transition: all 300ms ;
-    border-radius:8px;
-    margin-inline: 3em;
-}
-
-.splash-link-container:hover{
-    transform: scale(1.02) translate(0px, -8px);
-    box-shadow: 0px 3px 6px black;
-    .splash-button{
-        background-color: rgb(0, 106, 255);
-        color: white;
-
-    }
-}
-
-.splash-h1{
-    color: rgb(42, 42, 51);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: 700;
-    padding-bottom: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-.splash-p{
-    color: rgb(42, 42, 51);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    width: 100%;
-    text-align: center;
-}
-
-.splash-button{
-    background-color: white;
-    width: 80%;
-    padding: 8px;
-    border: 1px solid rgb(0, 106, 255);
-    border-radius: 4px;
-    color: rgb(0, 106, 255);
-    font-size: 16px;
-}
-
-.splash-button-div{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.splash-bottom-links{
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    flex-flow: row wrap;
-}
-
-
-#search-button{
-    height: 68px;
-    position: absolute;
-    width: 68px;
-    background-color: transparent;
-    border: none;
-    transform: translateX(-70px);
-
-    &:hover{
-        cursor: pointer;
-    }
-}
-
-#search-magnifying{
-    color: #8e8e8e;
-    height: 50%;
-    width: 50%;
-    &:hover{
-        color: rgb(0, 106, 255);
-    }
-    &:active{
-        color: (rgb(2, 56, 133))
-    }
-}
-
-.drop-down-box{
-    background-color: white;
-    box-shadow: 3px 2px 1px 1px rgba(0, 0, 0, .08);
-    position: absolute;
-    top: 40px;
-    right: 0px;
-    z-index: 50;
-    height: 196px;
-    width: 220px;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    a{
-        text-decoration: none;
-        color: black;
+@media (max-width: 650px) {
+    .login-form-container{
         width: 100%;
-        align-content: center;
-        padding: 25px;
-        &:hover{
-            box-shadow: 3px 2px 1px 1px rgba(0, 0, 0, .08);
-            background-color: rgba(0,106,255,255);
-            color: white;
-        border-radius: 3px;
-
-        }
     }
-}
-
-
-
-#logged-in-user{
-    position: relative;
-    &:hover .drop-down-box{
-        color: rgba(0,106,255,255);
-        cursor: default;
-        display: block;
-        align-items: center;
-    border-radius: 3px;
-
+    .img-holder{
+        display: none;
     }
-}
-
-// #logged-in-user:hover .drop-down-box{
-//     display: block;
-//     align-items: center;
-    
-// }
-
-.drop-down-saves-link{
-    display: flex;
 }

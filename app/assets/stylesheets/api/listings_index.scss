@@ -1,0 +1,160 @@
+// Place all the styles related to the api/listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (
+    
+.main-index-div{
+    display: flex;
+    height: calc(100vh -  80px);
+    width: calc()
+}
+
+.index-div-right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // border: 5px solid purple;
+    box-sizing: border-box;
+}
+
+.index-all-listings{
+    box-sizing: border-box;
+    padding: 8px;
+    // border: solid 3px green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.right-half{
+    overflow-y: scroll;
+    width: 100%;
+    padding-left: 3px;
+    box-shadow: -3px 1px 4px rgba(33, 33, 40, .5);
+    z-index: 1;
+}
+
+.left-half{
+    width: 100%;
+}
+
+#main-map{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 10px;
+    padding: 10px;
+}
+
+.index-listing-photos{
+    height: 180px;
+    width: 100%;
+    position: relative;
+    
+}
+
+
+.index-listing{
+    box-sizing: border-box;
+    // border: 5px solid red;
+    
+    border-bottom: solid 3px rgba(0,106,254,255);
+    box-shadow: 0px 1px 4px rgb(33, 33, 40);
+    // padding: 3px;
+    margin: 3px;
+    width: 48%;
+    height: 100%;
+    min-height: 317px;
+    // max-height: 299px;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: all 300ms ;
+    &:hover{
+        transform: scale(1.02) translate(0px, -8px);
+        box-shadow: 0px 3px 6px black;
+        
+    }
+}
+
+.index-listing-photo-div{
+    width: 100%;
+    height: 100%;
+    // border: 5px solid blue;
+    position: relative;
+    object-fit: cover;
+}
+
+.index-listing-info{
+    padding-left: 11px;
+    
+}
+
+.listing-index-address-div{
+    margin-bottom: 11px;
+    span{
+        font-size: small;
+    }
+}
+
+.index-listing-physical-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    font-weight: 300;
+}
+
+.index-listing-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.index-listing-char-info-div{
+    padding-bottom: 8px;
+}
+
+.index-listing-price{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.index-listing-price-div{
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+@media (min-width: 1500px) {
+    .left-half{
+        width: 140%;
+    }
+}
+
+@media (max-width: 950px) {
+    .index-listing{
+        width: 95%;
+    }
+}
+
+@media (max-width: 650px) {
+    .left-half{
+        display: none;
+    }
+    .index-listing{
+        width: 48%;
+    }
+}
+
+
+@media (max-width: 475px) {
+    .left-half{
+        display: none;
+    }
+    .index-listing{
+        width: 95%;
+    }
+}
+
+
