@@ -4,10 +4,10 @@ import { withRouter } from 'react-router-dom';
 import { updateFilter, changeFilter } from "../../actions/filter_actions";
 import MarkerManager from "../../util/marker_manager";
 
-const getCoordsObj = latLng=> ({
-    lst: latLng.lat(),
-    lng: latLng.lng()
-});
+// const getCoordsObj = latLng=> ({
+//     lst: latLng.lat(),
+//     lng: latLng.lng()
+// });
 
 
 // do something to get form type and change default mapOptions ?
@@ -42,6 +42,15 @@ class ListingMap extends React.Component{
         this.map = new google.maps.Map(this.mapNode, this.mapOptions);    // this renders map
         this.MarkerManager = new MarkerManager(this.map, this.props.openModal, this.props.saves);
         this.MarkerManager.updateMarkers(Object.values(this.props.listings));
+        Object.values(this.props.listings).forEach((list) => {
+            document.getElementById(`index-listing-item-${list.id}`)
+                .addEventListener("mouseover", ()=>{
+                    setTimeout(
+                    () => that.map.panTo({lat: list.latitude, lng: list.longitude}),
+                    200
+                    );
+                })
+        })
     }
 
     render(){

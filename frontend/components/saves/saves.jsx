@@ -13,10 +13,12 @@ class SavesIndex extends React.Component{
     
 
     render(){
-        // if (this.props.listings > this.props.saves) return null;
         let listingsArr = Object.values(this.props.listings);
+        listingsArr = listingsArr.filter(ele => ele)
+        console.log("saves", listingsArr)
+        let savesArr;
+        savesArr = Object.values(this.props.saves).map(list => list[1].listing_id)
         let that = this;
-        if (!listingsArr[0]) return null;
         return(
             (listingsArr.length === 0) ? <div className="no-search-wrapper">
             <br/> 
@@ -31,7 +33,7 @@ class SavesIndex extends React.Component{
                     <ListingMap
                     listings={listingsArr}
                     openModal={this.props.openModal}
-                    saves={this.props.userSaves}
+                    saves={savesArr}
                     />
                 </div>
 

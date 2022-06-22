@@ -11,6 +11,8 @@ class SearchResults extends React.Component{
         if (!this.props.listings) return null;
         let listingsArr = Object.values(this.props.listings)
         let that = this;
+        let savesArr;
+        savesArr = Object.values(this.props.saves).map(list => list[1].listing_id)
         if (this.props.searchErrors.length > 0) {
             return <div className="no-search-wrapper">
                 <br/> 
@@ -28,7 +30,7 @@ class SearchResults extends React.Component{
                     <ListingMap
                     listings={listingsArr}
                     openModal={this.props.openModal}
-                    saves={this.props.userSaves}
+                    saves={savesArr}
                     />
                 </div>
 
