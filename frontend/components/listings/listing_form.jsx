@@ -155,7 +155,7 @@ class ListingForm extends React.Component {
                                     Price:
                                 </label>
                                     <br/>
-                                <input id='short-input-location' className="form-input" type='number' placeholder="numbers only: no , $" value={price} onChange={this.update('price')} />
+                                <input id='short-input-location' className="form-input" type='number' min='1' placeholder="numbers only: no , $" value={price} onChange={this.update('price')} />
                             </div>
                         </div>
 
