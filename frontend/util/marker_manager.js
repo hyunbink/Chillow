@@ -155,10 +155,10 @@ class MarkerManager {
         // this.markers.push(marker);
     };
 
-    removeMarker(marker) {
-        this.markers[marker.listingId].setMap(null);
-        delete this.markers[marker.listingId];
-    }
+    // removeMarker(marker) {
+    //     this.markers[marker.listingId].setMap(null);
+    //     delete this.markers[marker.listingId];
+    // }
 
     clearMarkers(){
         let that = this;
