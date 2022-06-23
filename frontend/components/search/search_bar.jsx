@@ -27,7 +27,7 @@ class SearchBar extends React.Component{
                 <input type="search" className='search-bar' 
                 onChange={this.handleUpdate('query')}
                 value={this.state.query} 
-                placeholder='Enter an address or city'/>
+                placeholder="Enter a current listing's address or city"/>
                 <button id="search-button" >{<BiSearch id="search-magnifying" />}</button>
             </form>
         )
