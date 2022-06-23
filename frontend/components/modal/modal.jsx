@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import ListingShowContainer from '../listings/listing_show_container';
+import { GrClose } from 'react-icons/gr';
 
 function Modal({modal, closeModal, listingId}) {
     if (!modal) {
@@ -20,6 +21,9 @@ function Modal({modal, closeModal, listingId}) {
         <div className='modal-background' onClick={closeModal}>
             <div className='modal-child' onClick={e => e.stopPropagation()} >
                 { component }
+            </div>
+            <div className='modal-x'>
+                <GrClose id='x-modal'/>
             </div>
         </div>
     );
