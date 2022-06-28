@@ -16,8 +16,8 @@ const NavBar = ({ currentUser, logout, clearErrors, fetchAllListings }) => {
                 <img src={window.logo} alt="chillow-logo"></img>
             </Link>
             <div className='nav-right'>
-            <a id='personal-links' className='nav-left-link' href='https://github.com/hyunbink/Chillow' >Github</a>
-            <a id='personal-links' className='nav-left-link' href='https://www.linkedin.com/in/matia-kim/' >LinkedIn</a>
+            <a target="_blank" rel="noopener noreferrer" id='personal-links' className='nav-left-link' href='https://github.com/hyunbink/Chillow' >Github</a>
+            <a target="_blank" rel="noopener noreferrer" id='personal-links' className='nav-left-link' href='https://www.linkedin.com/in/matia-kim/' >LinkedIn</a>
             <Link id='login' to="/login" >Login</Link>
             <Link id='signup' to="/signup">Sign up</Link>
             </div>
@@ -35,8 +35,8 @@ const NavBar = ({ currentUser, logout, clearErrors, fetchAllListings }) => {
                 <img src={window.logo} alt="chillow-logo"></img>
             </Link>
             <div className='nav-right'>
-            <a id='personal-links' className='nav-left-link' href='https://github.com/hyunbink/Chillow' >Github</a>
-            <a id='personal-links' className='nav-left-link' href='https://www.linkedin.com/in/matia-kim/' >LinkedIn</a>
+            <a target="_blank" rel="noopener noreferrer" id='personal-links' className='nav-left-link' href='https://github.com/hyunbink/Chillow' >Github</a>
+            <a target="_blank" rel="noopener noreferrer" id='personal-links' className='nav-left-link' href='https://www.linkedin.com/in/matia-kim/' >LinkedIn</a>
             <span id='logged-in-user'>
                     <div className='nav-left-link'>{currentUser.email}</div>
                 <div className="drop-down-box">
