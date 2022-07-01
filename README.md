@@ -23,6 +23,7 @@
 
 ### Frontend
 
+
 <p align="left">
   <img width="15" height="15" alt="React-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"> React
 </p>
@@ -31,6 +32,12 @@
 </p>
 <p align="left">
   <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"> Javascript
+</p>
+<p align="left">
+  <img width="15" height="15" alt="CSS-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"> CSS
+</p>
+<p align="left">
+  <img width="15" height="15" alt="SASS-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"> SASS
 </p>
 <p align="left">
   <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"> AWS
