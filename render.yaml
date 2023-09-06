@@ -1,6 +1,6 @@
 databases:
   - name: Chillow
-    databaseName: chillow-postgres
+    databaseName: chillow_postgres
     user: hyunbink
 
 services:
