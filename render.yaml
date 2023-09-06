@@ -21,8 +21,12 @@ services:
       - key: LANG
         value: en_US.UTF-8
       - key: RACK_ENV
+        value: production
       - key: RAILS_ENV
+        value: production
       - key: RAILS_LOG_TO_STDOUT
+        value: enabled
       - key: RAILS_SERVE_STATIC_FILES
+        value: enabled
       - key: SECRET_KEY_BASE
         sync: false
